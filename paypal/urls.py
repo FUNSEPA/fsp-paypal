@@ -15,9 +15,10 @@ Including another URLconf
 """
 from django.conf.urls import url
 from django.contrib import admin
-from pagos.views import PagoView
+from pagos.views import PagoView, PagoDone
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-    url(r'^pago/', PagoView.as_view(), name='index'),
+    url(r'^pago/$', PagoView.as_view(), name='index'),
+    url(r'^pago/done$', PagoDone.as_view(), name='done'),
 ]
