@@ -1,7 +1,7 @@
 from django.db import models
 
 class CardType(models.Model):
-	card_type = models.CharField(max_length=25)
+	card_type = models.SlugField(max_length=25)
 	alias = models.CharField(max_length=25)
 
 	def __str__(self):

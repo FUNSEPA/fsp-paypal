@@ -1,17 +1,111 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<title>Pago</title>
-</head>
-<body>
-<table>
-<form action="{{action}}" method="post">
-{% csrf_token %}
-{{ form.as_table }}
-<tr>
-	<td><input type="submit" name="guardar" value="Donar"></td>
-</tr>
-</form>
-</table>
-</body>
-</html>
+{% extends "base.html" %}
+
+{% load staticfiles %}
+
+{% block extra_css %}
+<style>
+	#contact {
+		background-image: url("{% static "images/bg.jpg" %}");
+		background-position: center center;
+		background-repeat: no-repeat;
+		background-size: inherit;
+		display: block;
+		float: left;
+		padding: 70px 0;
+		width: 100%;
+	}
+</style>
+{% endblock extra_css %}
+
+{% block content %}
+<!-- Start Contact section -->
+<section id="contact">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-4 col-sm-6 col-xs-12">
+				<div class="contact-left wow fadeInLeft">
+					<h2>Donate to Funsepa</h2>
+					<address class="single-address">
+						<h4>Why:</h4>
+						<p>Because of f* you, that's why</p>
+					</address>
+					<address class="single-address">
+						<h4>No, really:</h4>
+						<p>Please?</p>
+					</address>
+					<address class="single-address">
+						<h4>What if I don't?</h4>
+						<p>We're going to your home</p>
+						<p>and kill everyone</p>
+					</address>
+					<address class="single-address">
+						<h4>Thanks!</h4>
+						<p>:)</p>
+					</address>
+				</div>
+			</div>
+			<div class="col-md-8 col-sm-6 col-xs-12">
+				<div class="contact-right wow fadeInRight">
+					<h2>Make a donation</h2>
+					<form action="{{action}}" method="post" class="contact-form" id="formulario">
+					{{form.non_field_errors}}
+						{% csrf_token %}
+						{% for field in form %}
+
+						<div class="form-group" id="form-group-{{field.name}}">
+							{{ field }}
+						</div>
+						{% endfor %}
+						<div id="captcha-space"></div>
+						<button id="btn-submit" type="submit" data-text="YEAH!" class="button button-default"><span>DONATE</span></button>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+<!-- End Contact section -->
+
+
+{% endblock content %}
+
+{% block extra_js %}
+<script src='https://www.google.com/recaptcha/api.js?onload=onloadCallback&render=explicit'></script>
+<script src="{% static "vendor/js/jquery.creditCardValidator.js" %}"></script>
+<script>
+	var form_valid = false;
+	$('#form-group-card_type').append('<span id="card-label"></span>');
+	$(document).ready(function () {
+		$('#btn-submit').prop('disabled', true);
+		$('#formulario').on('submit', function (e) {
+			e.preventDefault();
+			console.log(grecaptcha.getResponse());
+		});
+		$('#id_number').validateCreditCard(function(result){
+			if(result.valid){
+				$.ajax({
+					url: {% url "card_consult" %} + result.card_type.name,
+					dataType: 'json',
+					success: function (response) {
+						$('#id_card_type').val(response.id);
+						$('#card-label').show().html(response.name);
+					}
+				})
+			}
+			else{
+				$('#id_card_type').val('')
+				$('#card-label').html('').hide();
+			}
+		});
+	});
+	var onloadCallback = function() {
+		grecaptcha.render('captcha-space', {
+			'sitekey' : '6LexSAkUAAAAAIYsk4MMEFL_wWJtw-TADuwMxMC1',
+			'callback': function () {
+				$('#btn-submit').prop('disabled', false);
+				form_valid = true;
+			}
+		});
+	};
+</script>
+{% endblock extra_js %}

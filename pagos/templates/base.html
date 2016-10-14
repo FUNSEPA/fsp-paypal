@@ -1,0 +1,34 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Funsepa</title>
+	<link href="{% static "vendor/css/font-awesome.css" %}" rel="stylesheet">
+	<link rel="stylesheet" href="{% static "vendor/css/bootstrap.css" %}">
+	<link rel="stylesheet" href="{% static "css/style.css" %}">
+	<link href="{% static "vendor/css/theme-color/default.css" %}" rel="stylesheet">
+
+	<link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+    <!-- Raleway for Title -->
+    <link href='https://fonts.googleapis.com/css?family=Raleway' rel='stylesheet' type='text/css'>
+    <!-- Pacifico for 404 page   -->
+    <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+
+	{% block extra_css %}
+		
+	{% endblock extra_css %}
+</head>
+<body>
+	{% block content %}
+		
+	{% endblock content %}
+</body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script src="{% static "vendor/js/bootstrap.js" %}"></script>
+
+{% block extra_js %}
+	
+{% endblock extra_js %}
+</html>

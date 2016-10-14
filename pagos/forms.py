@@ -9,15 +9,28 @@ import paypalrestsdk
 import simplejson as json
 
 class DonationForm(Form):
-	first_name = forms.CharField(max_length=150)
-	last_name = forms.CharField(max_length=150)
-	mail = forms.EmailField(max_length=150)
-	card_type = forms.ModelChoiceField(queryset=CardType.objects.all())
-	number = forms.CharField(max_length=20)
-	expire_month = forms.IntegerField()
-	expire_year = forms.IntegerField()
-	cvv2 = forms.CharField(max_length=3)
-	total = forms.DecimalField(max_digits=7, decimal_places=2, min_value=0)
+	first_name = forms.CharField(
+		max_length=150,
+		widget= forms.TextInput(attrs={'class':'form-control', 'placeholder':'Name'}))
+	last_name = forms.CharField(
+		max_length=150,
+		widget= forms.TextInput(attrs={'class':'form-control', 'placeholder':'Last Name'}))
+	mail = forms.EmailField(
+		max_length=150,
+		widget= forms.EmailInput(attrs={'class':'form-control', 'placeholder':'Email'}))
+	card_type = forms.ModelChoiceField(
+		queryset=CardType.objects.all(),
+		widget= forms.Select(attrs={'class':'form-control hide', 'placeholder':'Card type'})
+		)
+	number = forms.CharField(
+		max_length=20,
+		widget= forms.TextInput(attrs={'class':'form-control', 'placeholder':'Card number'}))
+	expire_month = forms.IntegerField(widget= forms.NumberInput(attrs={'class':'form-control', 'placeholder':'Month'}))
+	expire_year = forms.IntegerField(widget= forms.NumberInput(attrs={'class':'form-control', 'placeholder':'Year'}))
+	cvv2 = forms.CharField(max_length=3, widget= forms.NumberInput(attrs={'class':'form-control', 'placeholder':'CVV'}))
+	total = forms.DecimalField(
+		max_digits=7, decimal_places=2, min_value=0,
+		widget= forms.NumberInput(attrs={'class':'form-control', 'placeholder':'$'}))
 
 	def clean(self):
 		cleaned_data = super(DonationForm, self).clean()

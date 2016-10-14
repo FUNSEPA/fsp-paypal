@@ -15,10 +15,12 @@ Including another URLconf
 """
 from django.conf.urls import url
 from django.contrib import admin
-from pagos.views import PagoView, PagoDone
+from pagos.views import PagoView, PagoDone, CardTypeView
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^pago/$', PagoView.as_view(), name='index'),
-    url(r'^pago/done$', PagoDone.as_view(), name='done'),
+    url(r'^pago/done/$', PagoDone.as_view(), name='done'),
+    url(r'^card_type/$', PagoDone.as_view(), name='card_consult'),
+    url(r'^card_type/(?P<slug>[\w-]+)/$', CardTypeView.as_view(), name='card_type'),
 ]
