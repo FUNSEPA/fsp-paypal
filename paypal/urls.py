@@ -22,5 +22,5 @@ urlpatterns = [
     url(r'^/done/$', PagoDone.as_view(), name='done'),
     url(r'^card_type/$', PagoDone.as_view(), name='card_consult'),
     url(r'^card_type/(?P<slug>[\w-]+)/$', CardTypeView.as_view(), name='card_type'),
-    url(r'^', PagoView.as_view(), name='index'),
+    url(r'^$', PagoView.as_view(), name='index'),
 ]

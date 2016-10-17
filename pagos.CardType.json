@@ -1,0 +1,106 @@
+[
+{
+   "model": "pagos.cardtype",
+   "pk": 1,
+   "fields": {
+      "card_type": "amex",
+      "alias": "American Express"
+   }
+},
+{
+   "model": "pagos.cardtype",
+   "pk": 2,
+   "fields": {
+      "card_type": "dankort",
+      "alias": "Dankort"
+   }
+},
+{
+   "model": "pagos.cardtype",
+   "pk": 3,
+   "fields": {
+      "card_type": "diners_club_carte_blanche",
+      "alias": "Diners Club Carte Blanche"
+   }
+},
+{
+   "model": "pagos.cardtype",
+   "pk": 4,
+   "fields": {
+      "card_type": "diners_club_international",
+      "alias": "Diners Club International"
+   }
+},
+{
+   "model": "pagos.cardtype",
+   "pk": 5,
+   "fields": {
+      "card_type": "mastercard",
+      "alias": "Diners Club United States"
+   }
+},
+{
+   "model": "pagos.cardtype",
+   "pk": 6,
+   "fields": {
+      "card_type": "discover",
+      "alias": "Discover Card"
+   }
+},
+{
+   "model": "pagos.cardtype",
+   "pk": 7,
+   "fields": {
+      "card_type": "jcb",
+      "alias": "JCB"
+   }
+},
+{
+   "model": "pagos.cardtype",
+   "pk": 8,
+   "fields": {
+      "card_type": "laser",
+      "alias": "Laser"
+   }
+},
+{
+   "model": "pagos.cardtype",
+   "pk": 9,
+   "fields": {
+      "card_type": "maestro",
+      "alias": "Maestro"
+   }
+},
+{
+   "model": "pagos.cardtype",
+   "pk": 10,
+   "fields": {
+      "card_type": "mastercard",
+      "alias": "MasterCard"
+   }
+},
+{
+   "model": "pagos.cardtype",
+   "pk": 11,
+   "fields": {
+      "card_type": "uatp",
+      "alias": "UATP"
+   }
+},
+{
+   "model": "pagos.cardtype",
+   "pk": 12,
+   "fields": {
+      "card_type": "visa",
+      "alias": "Visa"
+   }
+},
+{
+   "model": "pagos.cardtype",
+   "pk": 13,
+   "fields": {
+      "card_type": "visa_electron",
+      "alias": "Visa Electron"
+   }
+}
+]
