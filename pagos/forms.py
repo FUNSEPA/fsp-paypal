@@ -10,31 +10,45 @@ import simplejson as json
 
 class DonationForm(Form):
 	first_name = forms.CharField(
+		label= 'Name',
 		required = True,
 		max_length=150,
 		widget= forms.TextInput(attrs={'class':'form-control', 'placeholder':'Name'}))
 	last_name = forms.CharField(
+		label= 'Last Name',
 		max_length=150,
 		widget= forms.TextInput(attrs={'class':'form-control', 'placeholder':'Last Name'}))
 	mail = forms.EmailField(
 		max_length=150,
+		label= 'Email',
 		widget= forms.EmailInput(attrs={'class':'form-control', 'placeholder':'Email'}))
 	card_type = forms.ModelChoiceField(
 		required=False,
+		label= '',
 		queryset=CardType.objects.all(),
-		widget= forms.Select(attrs={'class':'form-control hide', 'placeholder':'Card type'})
+		widget= forms.Select(attrs={'class':'form-control', 'disabled':'true', 'placeholder':''})
 		)
 	number = forms.CharField(
 		max_length=20,
+		label= 'Card number',
 		widget= forms.TextInput(attrs={'class':'form-control', 'placeholder':'Card number'}))
-	expire_month = forms.IntegerField(widget= forms.NumberInput(attrs={'class':'form-control', 'placeholder':'Month (XX)'}))
+	expire_month = forms.IntegerField(
+		help_text='2 digits',
+		label= 'Month',
+		widget= forms.NumberInput(attrs={'class':'form-control', 'placeholder':'Month (XX)'})
+		)
 	expire_year = forms.IntegerField(
+		help_text='4 digits',
+		label= 'Year',
 		widget= forms.NumberInput(attrs={'class':'form-control', 'placeholder':'Year (XXXX)', 'size':4, 'maxlength':4})
 		)
-	cvv2 = forms.CharField(max_length=3, widget= forms.NumberInput(attrs={'class':'form-control', 'placeholder':'CVV'}))
+	cvv2 = forms.CharField(
+		label= 'CVV',
+		max_length=4, widget= forms.NumberInput(attrs={'class':'form-control', 'placeholder':'CVV'}))
 	total = forms.DecimalField(
+		label= 'Donation ($)',
 		max_digits=7, decimal_places=2, min_value=0,
-		widget= forms.NumberInput(attrs={'class':'form-control', 'placeholder':'$'}))
+		widget= forms.NumberInput(attrs={'class':'form-control', 'placeholder':'Donation ($)'}))
 
 	def clean(self):
 		cleaned_data = super(DonationForm, self).clean()

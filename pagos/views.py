@@ -13,7 +13,7 @@ import json
 class PagoView(FormView):
 	form_class = DonationForm
 	template_name = 'pago.html'
-	success_url = reverse_lazy('done')
+	success_url = 'http://funsepa.org/cms/es/gracias/'
 
 	def form_valid(self, form):
 	    return super(PagoView, self).form_valid(form)
