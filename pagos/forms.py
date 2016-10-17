@@ -24,9 +24,9 @@ class DonationForm(Form):
 		widget= forms.EmailInput(attrs={'class':'form-control', 'placeholder':'Email'}))
 	card_type = forms.ModelChoiceField(
 		required=False,
-		label= '',
+		label= 'Card type',
 		queryset=CardType.objects.all(),
-		widget= forms.Select(attrs={'class':'form-control', 'disabled':'true', 'placeholder':''})
+		widget= forms.Select(attrs={'class':'form-control hide', 'placeholder':'Card type'})
 		)
 	number = forms.CharField(
 		max_length=20,
