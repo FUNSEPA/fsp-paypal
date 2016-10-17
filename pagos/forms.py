@@ -26,7 +26,7 @@ class DonationForm(Form):
 		required=False,
 		label= 'Card type',
 		queryset=CardType.objects.all(),
-		widget= forms.Select(attrs={'class':'form-control hide', 'placeholder':'Card type'})
+		widget= forms.Select(attrs={'class':'form-control', 'placeholder':'Card type'})
 		)
 	number = forms.CharField(
 		max_length=20,
