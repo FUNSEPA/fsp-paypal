@@ -35,7 +35,7 @@ class DonationForm(Form):
 	def clean(self):
 		cleaned_data = super(DonationForm, self).clean()
 		paypalrestsdk.configure({
-		"mode":"sandbox",
+		"mode":settings.PP_MODE,
 		"client_id":settings.PP_CLIENT_ID,
 		"client_secret":settings.PP_CLIENT_SECRET
 		})
