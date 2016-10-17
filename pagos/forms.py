@@ -10,6 +10,7 @@ import simplejson as json
 
 class DonationForm(Form):
 	first_name = forms.CharField(
+		required = True,
 		max_length=150,
 		widget= forms.TextInput(attrs={'class':'form-control', 'placeholder':'Name'}))
 	last_name = forms.CharField(
@@ -19,14 +20,17 @@ class DonationForm(Form):
 		max_length=150,
 		widget= forms.EmailInput(attrs={'class':'form-control', 'placeholder':'Email'}))
 	card_type = forms.ModelChoiceField(
+		required=False,
 		queryset=CardType.objects.all(),
 		widget= forms.Select(attrs={'class':'form-control hide', 'placeholder':'Card type'})
 		)
 	number = forms.CharField(
 		max_length=20,
 		widget= forms.TextInput(attrs={'class':'form-control', 'placeholder':'Card number'}))
-	expire_month = forms.IntegerField(widget= forms.NumberInput(attrs={'class':'form-control', 'placeholder':'Month'}))
-	expire_year = forms.IntegerField(widget= forms.NumberInput(attrs={'class':'form-control', 'placeholder':'Year'}))
+	expire_month = forms.IntegerField(widget= forms.NumberInput(attrs={'class':'form-control', 'placeholder':'Month (XX)'}))
+	expire_year = forms.IntegerField(
+		widget= forms.NumberInput(attrs={'class':'form-control', 'placeholder':'Year (XXXX)', 'size':4, 'maxlength':4})
+		)
 	cvv2 = forms.CharField(max_length=3, widget= forms.NumberInput(attrs={'class':'form-control', 'placeholder':'CVV'}))
 	total = forms.DecimalField(
 		max_digits=7, decimal_places=2, min_value=0,
@@ -66,7 +70,7 @@ class DonationForm(Form):
 			donation.save()
 			print("Payment[%s] created successfully" % (payment.id))
 		else:
+			print(payment.error)
 			raise forms.ValidationError(
                  "Error during payment"
                 )
-			print(payment.error)

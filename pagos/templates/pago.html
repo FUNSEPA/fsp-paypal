@@ -2,10 +2,11 @@
 
 {% load staticfiles %}
 
+
 {% block extra_css %}
-<style>
+    <style>
 	#contact {
-		background-image: url("{% static "images/bg.jpg" %}");
+		background-image: url("{% static "images/fondo.jpg" %}");
 		background-position: center center;
 		background-repeat: no-repeat;
 		background-size: inherit;
@@ -16,50 +17,30 @@
 	}
 </style>
 {% endblock extra_css %}
-
 {% block content %}
 <!-- Start Contact section -->
 <section id="contact">
-	<div class="container">
+	<div class="container-fluid">
 		<div class="row">
-			<div class="col-md-4 col-sm-6 col-xs-12">
-				<div class="contact-left wow fadeInLeft">
-					<h2>Donate to Funsepa</h2>
-					<address class="single-address">
-						<h4>Why:</h4>
-						<p>Because of f* you, that's why</p>
-					</address>
-					<address class="single-address">
-						<h4>No, really:</h4>
-						<p>Please?</p>
-					</address>
-					<address class="single-address">
-						<h4>What if I don't?</h4>
-						<p>We're going to your home</p>
-						<p>and kill everyone</p>
-					</address>
-					<address class="single-address">
-						<h4>Thanks!</h4>
-						<p>:)</p>
-					</address>
-				</div>
-			</div>
-			<div class="col-md-8 col-sm-6 col-xs-12">
-				<div class="contact-right wow fadeInRight">
+			
+			<div class="col-md-4 col-sm-4 col-xs-12">
+				
+				<div class="well">
 					<h2>Make a donation</h2>
 					<form action="{{action}}" method="post" class="contact-form" id="formulario">
-					{{form.non_field_errors}}
+						{{form.non_field_errors}}
 						{% csrf_token %}
 						{% for field in form %}
-
 						<div class="form-group" id="form-group-{{field.name}}">
 							{{ field }}
 						</div>
 						{% endfor %}
 						<div id="captcha-space"></div>
-						<button id="btn-submit" type="submit" data-text="YEAH!" class="button button-default"><span>DONATE</span></button>
+						<button id="btn-submit" type="submit" data-text="YEAH!" class="btn btn-primary btn-raised">DONATE</button>
 					</form>
 				</div>
+			</div>
+			<div class="col-md-4 col-sm-6 col-xs-12">
 			</div>
 		</div>
 	</div>
@@ -70,6 +51,7 @@
 {% endblock content %}
 
 {% block extra_js %}
+<script src="{% static "js/jquery.card.js" %}"></script>
 <script src='https://www.google.com/recaptcha/api.js?onload=onloadCallback&render=explicit'></script>
 <script src="{% static "vendor/js/jquery.creditCardValidator.js" %}"></script>
 <script>
@@ -77,14 +59,19 @@
 	$('#form-group-card_type').append('<span id="card-label"></span>');
 	$(document).ready(function () {
 		$('#btn-submit').prop('disabled', true);
+
 		$('#formulario').on('submit', function (e) {
 			$('#btn-submit').prop('disabled', true);
+
+			$('#id_total').val(parseFloat($('#id_total').val()).toFixed(2));
+
 			if(form_valid==false){
 				e.preventDefault();
 				alert("Captcha error")
 				$('#btn-submit').prop('disabled', false);
 			}
 		});
+
 		$('#id_number').validateCreditCard(function(result){
 			if(result.valid){
 				$.ajax({
