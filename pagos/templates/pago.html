@@ -6,7 +6,7 @@
 {% block extra_css %}
 <style>
 	#contact {
-		background-image: url("{% static "images/fondo.jpg" %}");
+		background-image: url("{% static "images/fondo2.jpg" %}");
 		background-position: center center;
 		background-repeat: no-repeat;
 		background-size: inherit;
@@ -19,7 +19,7 @@
 {% endblock extra_css %}
 {% block content %}
 <!-- Start Contact section -->
-<section id="contact">
+<div id="contact">
 	<div class="navbar navbar-default">
 		<div class="container-fluid">
 			<div class="navbar-header">
@@ -46,7 +46,7 @@
 
 	<div class="container-fluid">
 		<div class="row">
-			<div class="col-md-4 col-sm-6 col-xs-12">
+			<div class="col-md-4 col-sm-4 col-xs-12">
 				<div class="well infobox">
 					<h1 style="font-family:'Covered By Your Grace', cursive;font-size:36;">#GivingWorks</h1>
 					<p>
@@ -90,14 +90,11 @@
 			
 		</div>
 	</div>
-</section>
+</div>
 <!-- End Contact section -->
-
-
 {% endblock content %}
 
 {% block extra_js %}
-<script src="{% static "js/jquery.card.js" %}"></script>
 <script src='https://www.google.com/recaptcha/api.js?onload=onloadCallback&render=explicit'></script>
 <script src="{% static "vendor/js/jquery.creditCardValidator.js" %}"></script>
 <script>

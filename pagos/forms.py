@@ -86,5 +86,5 @@ class DonationForm(Form):
 		else:
 			print(payment.error)
 			raise forms.ValidationError(
-                 "Error during payment"
+                 "Error during payment. Please check your credentials."
                 )
