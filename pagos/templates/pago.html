@@ -105,6 +105,7 @@
 	var form_valid = false;
 	$('#form-group-card_type').append('<span id="card-label"></span>');
 	$(document).ready(function () {
+		$('#id_card_type').hide();
 		$('#btn-submit').prop('disabled', true);
 
 		$('#formulario').on('submit', function (e) {
@@ -127,13 +128,15 @@
 				url: {% url "card_consult" %} + result.card_type.name+'/',
 				dataType: 'json',
 				success: function (response) {
-					$('#id_card_type').val(response.id);
-					$('#card-label').show().html(response.name);
+					console.log(response.id);
+					$('#id_card_type').show().val(response.id);
+					console.log($('form').serialize());
+					//$('#card-label').show().html(response.name);
 				}
 			})
 		}
 		else{
-			$('#id_card_type').val('')
+			$('#id_card_type').hide().val('')
 			$('#card-label').html('').hide();
 		}
 	});
