@@ -50,7 +50,7 @@
 				<div class="well infobox">
 					<h1 style="font-family:'Covered By Your Grace', cursive;font-size:36;">#GivingWorks</h1>
 					<p>
-					Now you can make your donation to the Sergio Paiz Foundation using our secure server. <br>
+						Now you can make your donation to the Sergio Paiz Foundation using our secure server. <br>
 						You just need a Credit card and a big heart.
 					</p>
 				</div>
@@ -79,11 +79,11 @@
 				<div class="well">
 					<h2 style="font-family:'Covered By Your Grace', cursive;font-size:36;">Or with PayPal Account</h2>
 					<form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
-					<input type="hidden" name="cmd" value="_s-xclick">
-					<input type="hidden" name="hosted_button_id" value="LU9GYRVY4YKZL">
-					<input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
-					<img alt="" border="0" src="https://www.paypalobjects.com/es_XC/i/scr/pixel.gif" width="1" height="1">
-				</form>
+						<input type="hidden" name="cmd" value="_s-xclick">
+						<input type="hidden" name="hosted_button_id" value="LU9GYRVY4YKZL">
+						<input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
+						<img alt="" border="0" src="https://www.paypalobjects.com/es_XC/i/scr/pixel.gif" width="1" height="1">
+					</form>
 				</div>
 
 			</div>
@@ -120,6 +120,24 @@
 		});
 
 	});
+
+	$('#id_number').validateCreditCard(function(result){
+		if(result.valid){
+			$.ajax({
+				url: {% url "card_consult" %} + result.card_type.name+'/',
+				dataType: 'json',
+				success: function (response) {
+					$('#id_card_type').val(response.id);
+					$('#card-label').show().html(response.name);
+				}
+			})
+		}
+		else{
+			$('#id_card_type').val('')
+			$('#card-label').html('').hide();
+		}
+	});
+
 	var onloadCallback = function() {
 		grecaptcha.render('captcha-space', {
 			'sitekey' : '6LexSAkUAAAAAIYsk4MMEFL_wWJtw-TADuwMxMC1',

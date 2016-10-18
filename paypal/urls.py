@@ -19,8 +19,8 @@ from pagos.views import PagoView, PagoDone, CardTypeView
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-    url(r'^/done/$', PagoDone.as_view(), name='done'),
+    url(r'^done/$', PagoDone.as_view(), name='done'),
     url(r'^card_type/$', PagoDone.as_view(), name='card_consult'),
     url(r'^card_type/(?P<slug>[\w-]+)/$', CardTypeView.as_view(), name='card_type'),
-    url(r'^$', PagoView.as_view(), name='index'),
+    url(r'^', PagoView.as_view(), name='index'),
 ]
