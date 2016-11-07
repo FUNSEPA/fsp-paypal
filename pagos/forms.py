@@ -6,7 +6,8 @@ from .models import Donation, CardType, Donnor
 from .payment_template import form_parametros
 
 import paypalrestsdk
-import simplejson as json
+import simplejson
+import json
 
 
 class DonationForm(Form):
@@ -62,7 +63,7 @@ class DonationForm(Form):
             "cvv2": cleaned_data.get("cvv2"),
             "first_name": cleaned_data.get("first_name"),
             "last_name": cleaned_data.get("last_name")}
-        payment = paypalrestsdk.Payment(form_parametros(credit_card, json.dumps(cleaned_data.get("total"))))
+        payment = paypalrestsdk.Payment(form_parametros(credit_card, simplejson.dumps(cleaned_data.get("total"))))
         if payment.create():
             print(cleaned_data.get("mail"))
             donnor = Donnor.objects.create(
@@ -79,4 +80,7 @@ class DonationForm(Form):
             print("Payment[%s] created successfully" % (payment.id))
         else:
             print(payment.error)
-            raise forms.ValidationError("Error during payment. Please check your credentials. Error given was: " + payment.error)
+            err_text = ""
+            for err in payment.error['details']:
+                err_text += err['issue'] + " "
+            raise forms.ValidationError("Error during payment. Please check your credentials. Error given was: " + err_text)
