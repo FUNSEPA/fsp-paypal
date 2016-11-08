@@ -12,7 +12,8 @@ class PagoView(FormView):
     success_url = 'http://funsepa.org/cms/es/gracias/'
 
     def form_valid(self, form):
-        return super(PagoView, self).form_valid(form)
+        instance = super(PagoView, self).form_valid(form)
+        return instance
 
 
 class PagoDone(TemplateView):
@@ -27,10 +28,9 @@ class CardTypeView(DetailView):
         card_type = CardType.objects.filter(card_type=kwargs.pop('slug')).first()
         if card_type:
             response = {
-            'id': card_type.id,
-            'card_type': card_type.card_type,
-            'name': card_type.alias,
-            }
+                'id': card_type.id,
+                'card_type': card_type.card_type,
+                'name': card_type.alias}
         else:
             response = None
         return HttpResponse(json.dumps(response))

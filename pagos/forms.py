@@ -4,6 +4,7 @@ from django.conf import settings
 
 from .models import Donation, CardType, Donnor
 from .payment_template import form_parametros
+from pagos.email import send_thanks_email
 
 import paypalrestsdk
 import simplejson
@@ -65,7 +66,6 @@ class DonationForm(Form):
             "last_name": cleaned_data.get("last_name")}
         payment = paypalrestsdk.Payment(form_parametros(credit_card, simplejson.dumps(cleaned_data.get("total"))))
         if payment.create():
-            print(cleaned_data.get("mail"))
             donnor = Donnor.objects.create(
                 first_name=cleaned_data.get("first_name"),
                 last_name=cleaned_data.get("last_name"),
@@ -77,10 +77,13 @@ class DonationForm(Form):
                 donnor=donnor,
                 payment_ref=payment.id)
             donation.save()
+            send_thanks_email(cleaned_data.get("first_name"), cleaned_data.get("last_name"), cleaned_data.get("mail"), cleaned_data.get("total"))
             print("Payment[%s] created successfully" % (payment.id))
         else:
             print(payment.error)
             err_text = ""
-            for err in payment.error['details']:
-                err_text += err['issue'] + " "
-            raise forms.ValidationError("Error during payment. Please check your credentials. Error given was: " + err_text)
+            if "details" in payment.error:
+                err_text = "Error given was: "
+                for err in payment.error['details']:
+                    err_text += err['issue'] + " "
+            raise forms.ValidationError("Error during payment due to invalid credit card. Please check your credentials." + err_text)
