@@ -3,50 +3,48 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Funsepa</title>
-	
-	<link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Roboto:300,400,500,700">
-	<link href="https://fonts.googleapis.com/css?family=Covered+By+Your+Grace" rel="stylesheet">
-
-	<link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/icon?family=Material+Icons">
-	<link rel="shortcut icon" href="http://funsepa.org/cms/wp-content/uploads/2016/07/favicon.ico">
-
-	<link rel="stylesheet" type="text/css" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-
-	<link rel="stylesheet" type="text/css" href="{% static "css/bootstrap-material-design.min.css" %}">
-	<link rel="stylesheet" type="text/css" href="{% static "css/ripples.css" %}">
-
-
-	<link href="{% static "vendor/css/font-awesome.css" %}" rel="stylesheet">
-	
-
-	<link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
-    <!-- Raleway for Title -->
-    <link href='https://fonts.googleapis.com/css?family=Raleway' rel='stylesheet' type='text/css'>
-    <!-- Pacifico for 404 page   -->
-    <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
-
-
+	<title>Cardio: Free One Page Template by Luka Cvetinovic</title>
+	<meta name="msapplication-TileColor" content="#00a8ff">
+	<meta name="msapplication-config" content="img/favicons/browserconfig.xml">
+	<meta name="theme-color" content="#ffffff">
+	<!-- Normalize -->
+	<link rel="stylesheet" type="text/css" href="{% static "css/normalize.css" %}">
+	<!-- Bootstrap -->
+	<link rel="stylesheet" type="text/css" href="{% static "css/bootstrap.css" %}">
+	<!-- Owl -->
+	<link rel="stylesheet" type="text/css" href="{% static "css/owl.css" %}">
+	<!-- Animate.css -->
+	<link rel="stylesheet" type="text/css" href="{% static "css/animate.css" %}">
+	<!-- Font Awesome -->
+	<link rel="stylesheet" type="text/css" href="fonts/font-awesome-4.1.0/css/font-awesome.min.css">
+	<!-- Elegant Icons -->
+	<link rel="stylesheet" type="text/css" href="fonts/eleganticons/et-icons.css">
+	<!-- Main style -->
+	<link rel="stylesheet" type="text/css" href="{% static "css/cardio.css" %}">
 
 
 
 	{% block extra_css %}
-		
+
 	{% endblock extra_css %}
 </head>
 <body>
 	{% block content %}
-		
+
 	{% endblock content %}
 </body>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-<script src="{% static "vendor/js/bootstrap.js" %}"></script>
-<script src="{% static "js/material.min.js" %}"></script>
-<script src="{% static "js/ripples.min.js" %}"></script>
+<script src="{% static "js/jquery-1.11.1.min.js" %}"></script>
+<script src="{% static "js/owl.carousel.min.js" %}"></script>
+<script src="{% static "js/bootstrap.min.js" %}"></script>
+<script src="{% static "js/wow.min.js" %}"></script>
+<script src="{% static "js/typewriter.js" %}"></script>
+<script src="{% static "js/jquery.onepagenav.js" %}"></script>
+<script src="{% static "js/main.js" %}"></script>
 
 
 {% block extra_js %}
-	
+
 {% endblock extra_js %}
 </html>
