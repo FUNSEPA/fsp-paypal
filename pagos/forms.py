@@ -16,42 +16,58 @@ class DonationForm(Form):
         label='Name',
         required=True,
         max_length=150,
-        widget=forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Name'}))
+        widget=forms.TextInput(attrs={'class': 'form-control form-white', 'placeholder': 'Name'}))
     last_name = forms.CharField(
         label='Last Name',
         max_length=150,
-        widget=forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Last Name'}))
+        widget=forms.TextInput(attrs={'class': 'form-control form-white', 'placeholder': 'Last Name'}))
     mail = forms.EmailField(
         max_length=150,
         label='Email',
-        widget=forms.EmailInput(attrs={'class': 'form-control', 'placeholder': 'Email'}))
+        widget=forms.EmailInput(attrs={'class': 'form-control form-white', 'placeholder': 'Email'}))
     card_type = forms.ModelChoiceField(
         required=True,
         label='',
         queryset=CardType.objects.all(),
-        widget=forms.Select(attrs={'class': 'form-control', 'placeholder': ''}))
+        widget=forms.HiddenInput(attrs={'class': 'form-control form-white dropdown', 'placeholder': ''}))
     number = forms.CharField(
         max_length=20,
         label='Card number',
-        widget=forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Card number'}))
+        widget=forms.TextInput(attrs={'class': 'form-control form-white', 'placeholder': 'Card number'}))
     expire_month = forms.IntegerField(
         help_text='2 digits',
         label='Month',
-        widget=forms.NumberInput(attrs={'class': 'form-control', 'placeholder': 'Month (XX)'}))
+        widget=forms.NumberInput(attrs={
+            'class': 'form-control form-white',
+            'min': '1',
+            'max': '12',
+            'placeholder': 'Month (XX)'}))
     expire_year = forms.IntegerField(
         help_text='4 digits',
         label='Year',
-        widget=forms.NumberInput(attrs={'class': 'form-control', 'placeholder': 'Year (XXXX)', 'size': 4, 'maxlength': 4}))
+        widget=forms.NumberInput(attrs={
+            'class': 'form-control form-white',
+            'min': '1',
+            'placeholder': 'Year (XXXX)',
+            'size': 4, 'maxlength': 4}))
     cvv2 = forms.CharField(
         label='CVV',
-        max_length=4, widget=forms.NumberInput(attrs={'class': 'form-control', 'placeholder': 'CVV'}))
+        max_length=4, widget=forms.NumberInput(attrs={
+            'class': 'form-control form-white',
+            'min': '1',
+            'placeholder': 'CVV'}))
     total = forms.DecimalField(
         label='Donation ($)',
         max_digits=7, decimal_places=2, min_value=0,
-        widget=forms.NumberInput(attrs={'class': 'form-control', 'placeholder': 'Donation ($)'}))
+        widget=forms.NumberInput(attrs={
+            'class': 'form-control form-white',
+            'min': '0',
+            'placeholder': 'Donation ($)'}))
 
     def clean(self):
         cleaned_data = super(DonationForm, self).clean()
+        if cleaned_data.get("card_type") is None:
+            raise forms.ValidationError("Error processing your card. Please check it is a valida number.")
         paypalrestsdk.configure({
             "mode": settings.PP_MODE,
             "client_id": settings.PP_CLIENT_ID,
@@ -77,7 +93,8 @@ class DonationForm(Form):
                 donnor=donnor,
                 payment_ref=payment.id)
             donation.save()
-            send_thanks_email(cleaned_data.get("first_name"), cleaned_data.get("last_name"), cleaned_data.get("mail"), cleaned_data.get("total"))
+            if 'EMAIL_FROM' in globals():
+                send_thanks_email(cleaned_data.get("first_name"), cleaned_data.get("last_name"), cleaned_data.get("mail"), cleaned_data.get("total"))
             print("Payment[%s] created successfully" % (payment.id))
         else:
             print(payment.error)

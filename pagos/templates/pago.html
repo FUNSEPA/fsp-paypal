@@ -2,128 +2,260 @@
 
 {% load staticfiles %}
 
-
-{% block extra_css %}
-<style>
-	#contact {
-		background-image: url("{% static "images/fondo2.jpg" %}");
-		background-position: center center;
-		background-repeat: no-repeat;
-		background-size: inherit;
-		display: block;
-		float: left;
-		padding: 70px 0;
-		width: 100%;
-	}
-</style>
-{% endblock extra_css %}
 {% block content %}
-<!-- Start Contact section -->
-<div id="contact">
-	<div class="navbar navbar-default">
-		<div class="container-fluid">
-			<div class="navbar-header">
-				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-warning-collapse">
-					<span class="icon-bar"></span>
-					<span class="icon-bar"></span>
-					<span class="icon-bar"></span>
-				</button>
-				<a class="navbar-brand" href="https://funsepa.org">
-					<img alt="Fundación Sergio Paiz Andrade - Funsepa" src="https://funsepa.org/cms/wp-content/uploads/2016/07/logo_header_2.png" style="height: 100%;">
-				</a>
+<a id="menu-toggle" href="#" class="btn btn-light btn-lg toggle"><i class="fa fa-bars"></i></a>
+<nav id="sidebar-wrapper">
+	<ul class="sidebar-nav">
+		<a id="menu-close" href="#" class="btn btn-light btn-lg pull-right toggle"><i class="fa fa-times"></i></a>
+		<li class="sidebar-brand"><a href="#top" onclick=$("#menu-close").click();>Funsepa</a></li>
+		<li><a href="#top" onclick=$("#menu-close").click();>Home</a></li>
+		<li><a onclick=$("#menu-close").click(); href="https://funsepa.org/cms/en/our-history/">ABOUT US</a></li>
+		<li><a onclick=$("#menu-close").click(); href="https://funsepa.org/cms/es/supplying-technology/">PROGRAMS</a></li>
+		<li><a onclick=$("#menu-close").click(); href="https://funsepa.org/cms/en/newsletter/">EVENTS</a></li>
+		<li><a onclick=$("#menu-close").click(); href="https://funsepa.org/cms/en/combosen/">ACT</a></li>
+	</ul>
+</nav>
+<section id="about" class="about">
+	<div class="container">
+		<div class="row ">
+			<div class="col-md-12 text-center">
+				<h1 class="black-text">#Donation Works</h1>
+				<h3 class="black-text">Support Guatemalan children's education by donating to Funsepa!</h3>
 			</div>
-			<div class="navbar-collapse collapse navbar-warning-collapse">
-				<ul class="nav navbar-nav">
-					<li><a href="https://funsepa.org/cms/en/our-history/">ABOUT US</a></li>
-					<li><a href="https://funsepa.org/cms/es/supplying-technology/">PROGRAMS</a></li>
-					<li><a href="https://funsepa.org/cms/en/newsletter/">EVENTS</a></li>
-					<li><a href="https://funsepa.org/cms/en/combosen/">ACT</a></li>
-
-				</ul>
+		</div>
+		<div class="row v-center">
+			<div class="col-md-6">
+				<div class="row text-center">
+					<div class="donation col-md-6 col-xs-6">
+						<div class="service-item">
+							<h4>
+								<strong>Education eBook</strong>
+							</h4>
+							<button class="btn btn-dark" onclick="pick_total(6);">$6</button>
+						</div>
+					</div>
+					<div class="col-md-6 col-xs-6">
+						<div class="service-item">
+							<h4>
+								<strong>Keyboard + Mouse</strong>
+							</h4>
+							<button class="btn btn-dark" onclick="pick_total(20);">$20</button>
+						</div>
+					</div>
+				</div>
+				<div class="row text-center">
+					<div class="donation col-md-6 col-xs-6">
+						<div class="service-item bg-primary">
+							<h4>
+								<strong>eEncyclopedia</strong>
+							</h4>
+							<button class="btn btn-dark" onclick="pick_total(50);">$50</button>
+						</div>
+					</div>
+					<div class="col-md-6 col-xs-6">
+						<div class="service-item bg-primary">
+							<h4>
+								<strong>Training 4 teachers</strong>
+							</h4>
+							<button class="btn btn-dark" onclick="pick_total(60);">$60</button>
+						</div>
+					</div>
+				</div>
+				<div class="row text-center">
+					<div class="donation col-md-6 col-xs-6">
+						<div class="service-item bg-primary">
+							<h4>
+								<strong>1 computer</strong>
+							</h4>
+							<button class="btn btn-dark" onclick="pick_total(125);">$125</button>
+						</div>
+					</div>
+					<div class="col-md-6 col-xs-6">
+						<div class="service-item bg-primary">
+							<h4>
+								<strong>Server for education</strong>
+							</h4>
+							<button class="btn btn-dark" onclick="pick_total(500);">$500</button>
+						</div>
+					</div>
+				</div>
+				<div class="row text-center">
+					<div class="donation col-md-6 col-xs-6">
+						<div class="service-item bg-primary">
+							<h4>
+								<strong>A laboratory maintenance</strong>
+							</h4>
+							<button class="btn btn-dark" onclick="pick_total(1250);">$1,250</button>
+						</div>
+					</div>
+					<div class="col-md-6 col-xs-6">
+						<div class="service-item bg-primary">
+							<h4>
+								<strong>Complete training</strong>
+							</h4>
+							<button class="btn btn-dark" onclick="pick_total(1800);">$1,800</button>
+						</div>
+					</div>
+				</div>
+				<div class="row text-center">
+					<div class="donation col-md-6 col-xs-6">
+						<div class="service-item bg-primary">
+							<h4>
+								<strong>Computer lab</strong>
+							</h4>
+							<button class="btn btn-dark" onclick="pick_total(5000);">$5,000</button>
+						</div>
+					</div>
+					<div class="col-md-6 col-xs-6">
+						<div class="service-item bg-primary">
+							<h4>
+								<strong>Another quantity</strong>
+							</h4>
+							<button class="btn btn-dark" onclick="pick_total();">Another</button>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="col-md-6">
+				<form action="{{action}}" method="post" class="contact-form" id="formulario">
+					{% csrf_token %}
+					{% if form.non_field_errors %}
+					<div class="well">
+						{{form.non_field_errors}}
+					</div>
+					{% endif %}
+					{{form.card_type}}
+					<div class="row">
+						<div class="col-md-12">
+							<div class="form-group label-floating is-empty" id="form-group-{{field.name}}">
+									{{ form.total }}
+							</div>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-md-6">
+							<div class="form-group label-floating is-empty" id="form-group-{{field.name}}">
+								{{ form.first_name }}
+							</div>
+						</div>
+						<div class="col-md-6">
+							<div class="form-group label-floating is-empty" id="form-group-{{field.name}}">
+								{{ form.last_name }}
+							</div>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-md-12">
+							<div class="form-group label-floating is-empty" id="form-group-{{field.name}}">
+								{{ form.mail }}
+							</div>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-md-12">
+							<div class="form-group label-floating is-empty" id="form-group-{{field.name}}">
+								{{ form.number }}
+							</div>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-md-4 col-xs-4">
+							<div class="form-group label-floating is-empty" id="form-group-{{field.name}}">
+								{{ form.expire_month }}
+							</div>
+						</div>
+						<div class="col-md-4 col-xs-4">
+							<div class="form-group label-floating is-empty" id="form-group-{{field.name}}">
+								{{ form.expire_year }}
+							</div>
+						</div>
+						<div class="col-md-4 col-xs-4">
+							<div class="form-group label-floating is-empty" id="form-group-{{field.name}}">
+								{{ form.cvv2 }}
+							</div>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-md-12 pull-right">
+							<div id="captcha-space"></div>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-md-12 text-center">
+							<button id="btn-submit" type="submit" data-text="YEAH!" class="btn btn-dark btn-lg service-item">DONATE</button>
+						</div>
+					</div>
+				</form>
 			</div>
 		</div>
 	</div>
-
-	<div class="container-fluid">
-		<div class="row">
-			<div class="col-md-4 col-sm-4 col-xs-12">
-				<div class="well infobox">
-					<h1 style="font-family:'Covered By Your Grace', cursive;font-size:36;">#GivingWorks</h1>
-					<p>
-						Now you can make your donation to the Sergio Paiz Foundation using our secure server. <br>
-						You just need a Credit card and a big heart.
-					</p>
-				</div>
-
-			</div>
-			<div class="col-md-4 col-sm-4 col-xs-12">
-
-				<div class="well">
-					<h2 style="font-family:'Covered By Your Grace', cursive;font-size:36;">Make a donation with Credit Card</h2>
-					<form action="{{action}}" method="post" class="contact-form" id="formulario">
-						{{form.non_field_errors}}
-						{% csrf_token %}
-						{% for field in form %}
-						<div class="form-group label-floating is-empty" id="form-group-{{field.name}}">
-							<label class="control-label" for="{{ field.label}}">{{field.label}}</label>
-							{{ field }}
-							<p class="help-block">{{ field.help_text|safe }}</p>
+</section>
+<!-- Modal -->
+<div class="modal fade bs-example-modal-lg" id="david-modal" tabindex="-1" role="dialog" aria-labelledby="david-modal-label">
+	<div class="modal-dialog modal-lg" role="document">
+		<div class="modal-content">
+			<div class="modal-body header">
+				<div class="row">
+					<div class="col-md-6">
+						<div class="text-vertical-center">
+							<h1 class="title-text">Funsepa</h1>
+							<h3>Lets give children<br>like DAVID the<br>opportunity<br>for a better future</h3>
+							<br>
+							<button href="#about" class="btn btn-light btn-lg" data-dismiss="modal" aria-label="Close">Join Us</button>
 						</div>
-						{% endfor %}
-						<div id="captcha-space"></div>
-						<button id="btn-submit" type="submit" data-text="YEAH!" class="btn btn-primary btn-raised">DONATE</button>
-					</form>
+					</div>
 				</div>
+				
 			</div>
-			<div class="col-md-4 col-sm-4 col-xs-12">
-				<div class="well">
-					<h2 style="font-family:'Covered By Your Grace', cursive;font-size:36;">Or with PayPal Account</h2>
-					<form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
-						<input type="hidden" name="cmd" value="_s-xclick">
-						<input type="hidden" name="hosted_button_id" value="LU9GYRVY4YKZL">
-						<input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
-						<img alt="" border="0" src="https://www.paypalobjects.com/es_XC/i/scr/pixel.gif" width="1" height="1">
-					</form>
-				</div>
-
-			</div>
-			
 		</div>
 	</div>
 </div>
-<!-- End Contact section -->
+
 {% endblock content %}
 
 {% block extra_js %}
 <script src='https://www.google.com/recaptcha/api.js?onload=onloadCallback&render=explicit'></script>
 <script src="{% static "vendor/js/jquery.creditCardValidator.js" %}"></script>
 <script>
-	$.material.init()
+	function pick_total(total) {
+		if(total){
+			$('#id_total').val(total).focus();
+			change_button(total);
+		}
+		else{
+			$('#id_total').val('').focus();
+			change_button('');
+		}
+	}
+	function change_button(total) {
+		$('#btn-submit').html('Donate $' + total);
+	}
 	var form_valid = false;
 	$('#form-group-card_type').append('<span id="card-label"></span>');
 	$(document).ready(function () {
+		{% if david is True %}
+		$('#david-modal').modal('show');
+		{% endif %}
 		$('#id_card_type').hide();
-		//$('#btn-submit').prop('disabled', true);
-
+		$('#btn-submit').prop('disabled', true);
 		$('#formulario').on('submit', function (e) {
-			//$('#btn-submit').prop('disabled', true);
-
+			$('#btn-submit').prop('disabled', true);
 			$('#id_total').val(parseFloat($('#id_total').val()).toFixed(2));
-
 			if(form_valid==false){
-				//e.preventDefault();
-				//alert("Captcha error")
-				//$('#btn-submit').prop('disabled', false);
+				e.preventDefault();
+				alert("Captcha error")
+				$('#btn-submit').prop('disabled', false);
 			}
 			if(!$('#id_card_type').val()){
 				e.preventDefault();
 				alert("Please check your card number. We couldn't find the cartype in our database.")
-				//$('#btn-submit').prop('disabled', false);
+				$('#btn-submit').prop('disabled', false);
 			}
 		});
-
+		$('#id_total').on('keyup', function () {
+			change_button($(this).val());
+		});
 	});
-
 	$('#id_number').validateCreditCard(function(result){
 		if(result.valid){
 			$.ajax({
@@ -133,7 +265,7 @@
 					console.log(response.id);
 					$('#id_card_type').show().val(response.id);
 					console.log($('form').serialize());
-					//$('#card-label').show().html(response.name);
+					$('#card-label').show().html(response.name);
 				}
 			})
 		}
@@ -142,15 +274,15 @@
 			$('#card-label').html('').hide();
 		}
 	});
-
 	var onloadCallback = function() {
 		grecaptcha.render('captcha-space', {
 			'sitekey' : '6LexSAkUAAAAAIYsk4MMEFL_wWJtw-TADuwMxMC1',
 			'callback': function () {
-				//$('#btn-submit').prop('disabled', false);
+				$('#btn-submit').prop('disabled', false);
 				form_valid = true;
 			}
 		});
 	};
 </script>
+
 {% endblock extra_js %}
