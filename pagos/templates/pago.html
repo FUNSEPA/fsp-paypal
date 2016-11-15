@@ -15,16 +15,6 @@
 		<li><a onclick=$("#menu-close").click(); href="https://funsepa.org/cms/en/combosen/">ACT</a></li>
 	</ul>
 </nav>
-{% if david is True %}
-<header id="top" class="header">
-	<div class="text-vertical-center">
-		<h1 class="title-text">Funsepa</h1>
-		<h3>Lets give children like DAVID the opportunity for a better future</h3>
-		<br>
-		<a href="#about" class="btn btn-light btn-lg">Join Us</a>
-	</div>
-</header>
-{% endif %}
 <section id="about" class="about">
 	<div class="container">
 		<div class="row ">
@@ -33,97 +23,95 @@
 				<h3 class="black-text">Support Guatemalan children's education by donating to Funsepa!</h3>
 			</div>
 		</div>
-		<div class="row">
+		<div class="row v-center">
 			<div class="col-md-6">
 				<div class="row text-center">
-					<div class="donation col-md-6 col-sm-6">
+					<div class="donation col-md-6 col-xs-6">
 						<div class="service-item">
 							<h4>
 								<strong>Education eBook</strong>
 							</h4>
-							<a href="#id_total" class="btn btn-dark" onclick="pick_total(6);">
-								<strong>Donate $6</strong>
-							</a>
+							<button class="btn btn-dark" onclick="pick_total(6);">$6</button>
 						</div>
 					</div>
-					<div class="col-md-6 col-sm-6">
+					<div class="col-md-6 col-xs-6">
 						<div class="service-item">
 							<h4>
 								<strong>Keyboard + Mouse</strong>
 							</h4>
-							<button class="btn btn-dark" onclick="pick_total(20);">Donate $20</button>
+							<button class="btn btn-dark" onclick="pick_total(20);">$20</button>
 						</div>
 					</div>
 				</div>
 				<div class="row text-center">
-					<div class="donation col-md-6 col-sm-6">
+					<div class="donation col-md-6 col-xs-6">
 						<div class="service-item bg-primary">
 							<h4>
 								<strong>eEncyclopedia</strong>
 							</h4>
-							<button class="btn btn-dark" onclick="pick_total(50);">Donate $50</button>
+							<button class="btn btn-dark" onclick="pick_total(50);">$50</button>
 						</div>
 					</div>
-					<div class="col-md-6 col-sm-6">
+					<div class="col-md-6 col-xs-6">
 						<div class="service-item bg-primary">
 							<h4>
 								<strong>Training 4 teachers</strong>
 							</h4>
-							<button class="btn btn-dark" onclick="pick_total(60);">Donate $60</button>
+							<button class="btn btn-dark" onclick="pick_total(60);">$60</button>
 						</div>
 					</div>
 				</div>
 				<div class="row text-center">
-					<div class="donation col-md-6 col-sm-6">
+					<div class="donation col-md-6 col-xs-6">
 						<div class="service-item bg-primary">
 							<h4>
 								<strong>1 computer</strong>
 							</h4>
-							<button class="btn btn-dark" onclick="pick_total(125);">Donate $125</button>
+							<button class="btn btn-dark" onclick="pick_total(125);">$125</button>
 						</div>
 					</div>
-					<div class="col-md-6 col-sm-6">
+					<div class="col-md-6 col-xs-6">
 						<div class="service-item bg-primary">
 							<h4>
 								<strong>Server for education</strong>
 							</h4>
-							<button class="btn btn-dark" onclick="pick_total(500);">Donate $500</button>
+							<button class="btn btn-dark" onclick="pick_total(500);">$500</button>
 						</div>
 					</div>
 				</div>
 				<div class="row text-center">
-					<div class="donation col-md-6 col-sm-6">
+					<div class="donation col-md-6 col-xs-6">
 						<div class="service-item bg-primary">
 							<h4>
 								<strong>A laboratory maintenance</strong>
 							</h4>
-							<button class="btn btn-dark" onclick="pick_total(1250);">Donate $1,250</button>
+							<button class="btn btn-dark" onclick="pick_total(1250);">$1,250</button>
 						</div>
 					</div>
-					<div class="col-md-6 col-sm-6">
+					<div class="col-md-6 col-xs-6">
 						<div class="service-item bg-primary">
 							<h4>
 								<strong>Complete training</strong>
 							</h4>
-							<button class="btn btn-dark" onclick="pick_total(1800);">Donate $1,800</button>
+							<button class="btn btn-dark" onclick="pick_total(1800);">$1,800</button>
 						</div>
 					</div>
 				</div>
 				<div class="row text-center">
-					<div class="donation col-md-6 col-sm-6">
+					<div class="donation col-md-6 col-xs-6">
 						<div class="service-item bg-primary">
 							<h4>
 								<strong>Computer lab</strong>
 							</h4>
-							<button class="btn btn-dark" onclick="pick_total(5000);">Donate $5,000</button>
+							<button class="btn btn-dark" onclick="pick_total(5000);">$5,000</button>
 						</div>
 					</div>
-					<div class="col-md-6 col-sm-6">
+					<div class="col-md-6 col-xs-6">
 						<div class="service-item bg-primary">
 							<h4>
 								<strong>Another quantity</strong>
 							</h4>
-							<button class="btn btn-dark" onclick="pick_total();">Donate</button>
+							<button class="btn btn-dark" onclick="pick_total();">Another</button>
 						</div>
 					</div>
 				</div>
@@ -140,10 +128,7 @@
 					<div class="row">
 						<div class="col-md-12">
 							<div class="form-group label-floating is-empty" id="form-group-{{field.name}}">
-								<div class="input-group">
-									<div class="input-group-addon">$</div>
 									{{ form.total }}
-								</div>
 							</div>
 						</div>
 					</div>
@@ -174,17 +159,17 @@
 						</div>
 					</div>
 					<div class="row">
-						<div class="col-md-4">
+						<div class="col-md-4 col-xs-4">
 							<div class="form-group label-floating is-empty" id="form-group-{{field.name}}">
 								{{ form.expire_month }}
 							</div>
 						</div>
-						<div class="col-md-4">
+						<div class="col-md-4 col-xs-4">
 							<div class="form-group label-floating is-empty" id="form-group-{{field.name}}">
 								{{ form.expire_year }}
 							</div>
 						</div>
-						<div class="col-md-4">
+						<div class="col-md-4 col-xs-4">
 							<div class="form-group label-floating is-empty" id="form-group-{{field.name}}">
 								{{ form.cvv2 }}
 							</div>
@@ -197,7 +182,7 @@
 					</div>
 					<div class="row">
 						<div class="col-md-12 text-center">
-							<button id="btn-submit" type="submit" data-text="YEAH!" class="btn btn-dark btn-lg">DONATE</button>
+							<button id="btn-submit" type="submit" data-text="YEAH!" class="btn btn-dark btn-lg service-item">DONATE</button>
 						</div>
 					</div>
 				</form>
@@ -205,6 +190,27 @@
 		</div>
 	</div>
 </section>
+<!-- Modal -->
+<div class="modal fade bs-example-modal-lg" id="david-modal" tabindex="-1" role="dialog" aria-labelledby="david-modal-label">
+	<div class="modal-dialog modal-lg" role="document">
+		<div class="modal-content">
+			<div class="modal-body header">
+				<div class="row">
+					<div class="col-md-6">
+						<div class="text-vertical-center">
+							<h1 class="title-text">Funsepa</h1>
+							<h3>Lets give children<br>like DAVID the opportunity<br>for a better future</h3>
+							<br>
+							<br>
+							<button href="#about" class="btn btn-dark btn-lg" data-dismiss="modal" aria-label="Close">Join Us</button>
+						</div>
+					</div>
+				</div>
+				
+			</div>
+		</div>
+	</div>
+</div>
 
 {% endblock content %}
 
@@ -215,14 +221,22 @@
 	function pick_total(total) {
 		if(total){
 			$('#id_total').val(total).focus();
+			change_button(total);
 		}
 		else{
 			$('#id_total').val('').focus();
+			change_button('');
 		}
+	}
+	function change_button(total) {
+		$('#btn-submit').html('Donate $' + total);
 	}
 	var form_valid = false;
 	$('#form-group-card_type').append('<span id="card-label"></span>');
 	$(document).ready(function () {
+		{% if david is True %}
+		$('#david-modal').modal('show');
+		{% endif %}
 		$('#id_card_type').hide();
 		$('#btn-submit').prop('disabled', true);
 		$('#formulario').on('submit', function (e) {
@@ -238,6 +252,9 @@
 				alert("Please check your card number. We couldn't find the cartype in our database.")
 				$('#btn-submit').prop('disabled', false);
 			}
+		});
+		$('#id_total').on('keyup', function () {
+			change_button($(this).val());
 		});
 	});
 	$('#id_number').validateCreditCard(function(result){

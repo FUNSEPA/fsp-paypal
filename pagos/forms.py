@@ -37,18 +37,32 @@ class DonationForm(Form):
     expire_month = forms.IntegerField(
         help_text='2 digits',
         label='Month',
-        widget=forms.NumberInput(attrs={'class': 'form-control form-white', 'placeholder': 'Month (XX)'}))
+        widget=forms.NumberInput(attrs={
+            'class': 'form-control form-white',
+            'min': '1',
+            'max': '12',
+            'placeholder': 'Month (XX)'}))
     expire_year = forms.IntegerField(
         help_text='4 digits',
         label='Year',
-        widget=forms.NumberInput(attrs={'class': 'form-control form-white', 'placeholder': 'Year (XXXX)', 'size': 4, 'maxlength': 4}))
+        widget=forms.NumberInput(attrs={
+            'class': 'form-control form-white',
+            'min': '1',
+            'placeholder': 'Year (XXXX)',
+            'size': 4, 'maxlength': 4}))
     cvv2 = forms.CharField(
         label='CVV',
-        max_length=4, widget=forms.NumberInput(attrs={'class': 'form-control form-white', 'placeholder': 'CVV'}))
+        max_length=4, widget=forms.NumberInput(attrs={
+            'class': 'form-control form-white',
+            'min': '1',
+            'placeholder': 'CVV'}))
     total = forms.DecimalField(
         label='Donation ($)',
         max_digits=7, decimal_places=2, min_value=0,
-        widget=forms.NumberInput(attrs={'class': 'form-control form-white', 'placeholder': 'Donation ($)'}))
+        widget=forms.NumberInput(attrs={
+            'class': 'form-control form-white',
+            'min': '0',
+            'placeholder': 'Donation ($)'}))
 
     def clean(self):
         cleaned_data = super(DonationForm, self).clean()
