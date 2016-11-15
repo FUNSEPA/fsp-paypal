@@ -11,6 +11,13 @@ class PagoView(FormView):
     template_name = 'pago.html'
     success_url = 'http://funsepa.org/cms/es/gracias/'
 
+    def get_context_data(self, **kwargs):
+        context = super(PagoView, self).get_context_data(**kwargs)
+        david = self.request.GET.get('david', None)
+        if david:
+            context['david'] = True
+        return context
+
     def form_valid(self, form):
         instance = super(PagoView, self).form_valid(form)
         return instance
