@@ -3,189 +3,179 @@
 {% load staticfiles %}
 
 {% block content %}
-<a id="menu-toggle" href="#" class="btn btn-light btn-lg toggle"><i class="fa fa-bars"></i></a>
-<nav id="sidebar-wrapper">
-	<ul class="sidebar-nav">
-		<a id="menu-close" href="#" class="btn btn-light btn-lg pull-right toggle"><i class="fa fa-times"></i></a>
-		<li class="sidebar-brand"><a href="#top" onclick=$("#menu-close").click();>Funsepa</a></li>
-		<li><a href="#top" onclick=$("#menu-close").click();>Home</a></li>
-		<li><a onclick=$("#menu-close").click(); href="https://funsepa.org/cms/en/our-history/">ABOUT US</a></li>
-		<li><a onclick=$("#menu-close").click(); href="https://funsepa.org/cms/es/supplying-technology/">PROGRAMS</a></li>
-		<li><a onclick=$("#menu-close").click(); href="https://funsepa.org/cms/en/newsletter/">EVENTS</a></li>
-		<li><a onclick=$("#menu-close").click(); href="https://funsepa.org/cms/en/combosen/">ACT</a></li>
-	</ul>
+<nav class="navbar navbar-default">
+	<div class="container">
+		<!-- Brand and toggle get grouped for better mobile display -->
+		<div class="navbar-header">
+			<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+				<span class="sr-only">Toggle navigation</span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+			</button>
+			<a class="navbar-brand" href="https://funsepa.org/cms/en/home/">
+				<img style="max-width:200px; margin-top: -7px;" src="https://funsepa.org/cms/wp-content/uploads/2016/07/logo_header_1.png">
+			</a>
+		</div>
+	</div><!-- /.container-fluid -->
 </nav>
 <section id="about" class="about">
 	<div class="container">
-		<div class="row ">
+		<div class="row " id="header-row">
 			<div class="col-md-12 text-center">
-				<h1 class="black-text">#Donation Works</h1>
+				<h1 class="black-text">#Donating Works</h1>
 				<h3 class="black-text">Support Guatemalan children's education by donating to Funsepa!</h3>
 			</div>
 		</div>
-		<div class="row v-center">
-			<div class="col-md-6">
-				<div class="row text-center">
-					<div class="donation col-md-6 col-xs-6">
-						<div class="service-item">
-							<h4>
-								<strong>Education eBook</strong>
-							</h4>
-							<button class="btn btn-dark" onclick="pick_total(6);">$6</button>
+		<div class="row">
+			<div class="col-md-2"></div>
+			<div class="col-md-8">
+				<div class="row v-center" id="body-row">
+					<div class="col-md-6" id="area-botones">
+						<div class="row text-center v-center">
+							<div class="col-md-6 col-xs-6">
+								<div class="service-item">
+									<h4>
+										<strong>Keyboard + Mouse</strong>
+									</h4>
+									<button class="btn btn-dark" onclick="pick_total(20);">$20</button>
+								</div>
+							</div>
+							<div class="col-md-6 col-xs-6">
+								<div class="service-item bg-primary">
+									<h4>
+										<strong>1 computer</strong>
+									</h4>
+									<button class="btn btn-dark" onclick="pick_total(125);">$125</button>
+								</div>
+							</div>
+						</div>
+						<div class="row text-center v-center">
+							<div class="col-md-6 col-xs-6">
+								<div class="service-item bg-primary">
+									<h4>
+										<strong>Server for education</strong>
+									</h4>
+									<button class="btn btn-dark" onclick="pick_total(500);">$500</button>
+								</div>
+							</div>
+							<div class="col-md-6 col-xs-6">
+								<div class="service-item bg-primary">
+									<h4>
+										<strong>Complete training</strong>
+									</h4>
+									<button class="btn btn-dark" onclick="pick_total(1800);">$1,800</button>
+								</div>
+							</div>
+						</div>
+						<div class="row text-center v-center">
+							<div class="col-md-6 col-xs-6">
+								<div class="service-item bg-primary">
+									<h4>
+										<strong>Computer lab</strong>
+									</h4>
+									<button class="btn btn-dark" onclick="pick_total(5000);">$5,000</button>
+								</div>
+							</div>
+							<div class="col-md-6 col-xs-6">
+								<div class="service-item bg-primary">
+									<h4>
+										<strong>Another quantity</strong>
+									</h4>
+									<button class="btn btn-dark" onclick="pick_total();">Another</button>
+								</div>
+							</div>
 						</div>
 					</div>
-					<div class="col-md-6 col-xs-6">
-						<div class="service-item">
-							<h4>
-								<strong>Keyboard + Mouse</strong>
-							</h4>
-							<button class="btn btn-dark" onclick="pick_total(20);">$20</button>
-						</div>
-					</div>
-				</div>
-				<div class="row text-center">
-					<div class="donation col-md-6 col-xs-6">
-						<div class="service-item bg-primary">
-							<h4>
-								<strong>eEncyclopedia</strong>
-							</h4>
-							<button class="btn btn-dark" onclick="pick_total(50);">$50</button>
-						</div>
-					</div>
-					<div class="col-md-6 col-xs-6">
-						<div class="service-item bg-primary">
-							<h4>
-								<strong>Training 4 teachers</strong>
-							</h4>
-							<button class="btn btn-dark" onclick="pick_total(60);">$60</button>
-						</div>
-					</div>
-				</div>
-				<div class="row text-center">
-					<div class="donation col-md-6 col-xs-6">
-						<div class="service-item bg-primary">
-							<h4>
-								<strong>1 computer</strong>
-							</h4>
-							<button class="btn btn-dark" onclick="pick_total(125);">$125</button>
-						</div>
-					</div>
-					<div class="col-md-6 col-xs-6">
-						<div class="service-item bg-primary">
-							<h4>
-								<strong>Server for education</strong>
-							</h4>
-							<button class="btn btn-dark" onclick="pick_total(500);">$500</button>
-						</div>
-					</div>
-				</div>
-				<div class="row text-center">
-					<div class="donation col-md-6 col-xs-6">
-						<div class="service-item bg-primary">
-							<h4>
-								<strong>A laboratory maintenance</strong>
-							</h4>
-							<button class="btn btn-dark" onclick="pick_total(1250);">$1,250</button>
-						</div>
-					</div>
-					<div class="col-md-6 col-xs-6">
-						<div class="service-item bg-primary">
-							<h4>
-								<strong>Complete training</strong>
-							</h4>
-							<button class="btn btn-dark" onclick="pick_total(1800);">$1,800</button>
-						</div>
-					</div>
-				</div>
-				<div class="row text-center">
-					<div class="donation col-md-6 col-xs-6">
-						<div class="service-item bg-primary">
-							<h4>
-								<strong>Computer lab</strong>
-							</h4>
-							<button class="btn btn-dark" onclick="pick_total(5000);">$5,000</button>
-						</div>
-					</div>
-					<div class="col-md-6 col-xs-6">
-						<div class="service-item bg-primary">
-							<h4>
-								<strong>Another quantity</strong>
-							</h4>
-							<button class="btn btn-dark" onclick="pick_total();">Another</button>
-						</div>
+					<div class="col-md-6" id="area-form">
+						<div class="secure-text pull-right"><i class="fa fa-lock" aria-hidden="true"></i> secure connection</div>
+						<form action="{{action}}" method="post" class="contact-form" id="formulario">
+							{% csrf_token %}
+							{% if form.non_field_errors %}
+							<div class="well">
+								{{form.non_field_errors}}
+							</div>
+							{% endif %}
+							{{form.card_type}}
+							<div class="row">
+								<div class="col-md-12">
+									<div class="form-group label-floating is-empty" id="form-group-{{field.name}}">
+										{{ form.total }}
+									</div>
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-md-6">
+									<div class="form-group label-floating is-empty" id="form-group-{{field.name}}">
+										{{ form.first_name }}
+									</div>
+								</div>
+								<div class="col-md-6">
+									<div class="form-group label-floating is-empty" id="form-group-{{field.name}}">
+										{{ form.last_name }}
+									</div>
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-md-12">
+									<div class="form-group label-floating is-empty" id="form-group-{{field.name}}">
+										{{ form.mail }}
+									</div>
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-md-12 col-xs-12">
+									<div class="form-group label-floating is-empty has-feedback text-center" id="form-group-number">
+										{{ form.number }}
+										<span class="help-block">
+											<h2 class="card-type-icons">
+												<i class="fa fa-cc-visa" aria-hidden="true"></i>
+												<i class="fa fa-cc-amex" aria-hidden="true"></i>
+												<i class="fa fa-cc-mastercard" aria-hidden="true"></i>
+												<i class="fa fa-cc-diners-club" aria-hidden="true"></i>
+												<i class="fa fa-cc-discover" aria-hidden="true"></i>
+												<i class="fa fa-cc-jcb" aria-hidden="true"></i>
+											</h2>
+										</span>
+									</div>
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-md-4 col-xs-4">
+									<div class="form-group label-floating is-empty" id="form-group-{{field.name}}">
+										{{ form.expire_month }}
+									</div>
+								</div>
+								<div class="col-md-4 col-xs-4">
+									<div class="form-group label-floating is-empty" id="form-group-{{field.name}}">
+										{{ form.expire_year }}
+									</div>
+								</div>
+								<div class="col-md-4 col-xs-4">
+									<div class="form-group label-floating is-empty" id="form-group-{{field.name}}">
+										{{ form.cvv2 }}
+									</div>
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-md-12 pull-right">
+									<div id="captcha-space"></div>
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-md-12 text-center">
+									<button id="btn-submit" type="submit" data-text="YEAH!" class="btn btn-dark btn-lg service-item">DONATE</button>
+								</div>
+							</div>
+						</form>
 					</div>
 				</div>
 			</div>
-			<div class="col-md-6">
-				<form action="{{action}}" method="post" class="contact-form" id="formulario">
-					{% csrf_token %}
-					{% if form.non_field_errors %}
-					<div class="well">
-						{{form.non_field_errors}}
-					</div>
-					{% endif %}
-					{{form.card_type}}
-					<div class="row">
-						<div class="col-md-12">
-							<div class="form-group label-floating is-empty" id="form-group-{{field.name}}">
-									{{ form.total }}
-							</div>
-						</div>
-					</div>
-					<div class="row">
-						<div class="col-md-6">
-							<div class="form-group label-floating is-empty" id="form-group-{{field.name}}">
-								{{ form.first_name }}
-							</div>
-						</div>
-						<div class="col-md-6">
-							<div class="form-group label-floating is-empty" id="form-group-{{field.name}}">
-								{{ form.last_name }}
-							</div>
-						</div>
-					</div>
-					<div class="row">
-						<div class="col-md-12">
-							<div class="form-group label-floating is-empty" id="form-group-{{field.name}}">
-								{{ form.mail }}
-							</div>
-						</div>
-					</div>
-					<div class="row">
-						<div class="col-md-12">
-							<div class="form-group label-floating is-empty" id="form-group-{{field.name}}">
-								{{ form.number }}
-							</div>
-						</div>
-					</div>
-					<div class="row">
-						<div class="col-md-4 col-xs-4">
-							<div class="form-group label-floating is-empty" id="form-group-{{field.name}}">
-								{{ form.expire_month }}
-							</div>
-						</div>
-						<div class="col-md-4 col-xs-4">
-							<div class="form-group label-floating is-empty" id="form-group-{{field.name}}">
-								{{ form.expire_year }}
-							</div>
-						</div>
-						<div class="col-md-4 col-xs-4">
-							<div class="form-group label-floating is-empty" id="form-group-{{field.name}}">
-								{{ form.cvv2 }}
-							</div>
-						</div>
-					</div>
-					<div class="row">
-						<div class="col-md-12 pull-right">
-							<div id="captcha-space"></div>
-						</div>
-					</div>
-					<div class="row">
-						<div class="col-md-12 text-center">
-							<button id="btn-submit" type="submit" data-text="YEAH!" class="btn btn-dark btn-lg service-item">DONATE</button>
-						</div>
-					</div>
-				</form>
+			<div class="col-md-2"></div>
+		</div>
+		<div class="row ">
+			<div class="col-md-12 text-center">
+				<h1 class="black-text-inverse">Thank you!</h1>
 			</div>
 		</div>
 	</div>

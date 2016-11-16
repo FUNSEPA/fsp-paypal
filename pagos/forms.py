@@ -67,7 +67,7 @@ class DonationForm(Form):
     def clean(self):
         cleaned_data = super(DonationForm, self).clean()
         if cleaned_data.get("card_type") is None:
-            raise forms.ValidationError("Error processing your card. Please check it is a valida number.")
+            raise forms.ValidationError("Error processing your card. Please check it is a valid number.")
         paypalrestsdk.configure({
             "mode": settings.PP_MODE,
             "client_id": settings.PP_CLIENT_ID,
