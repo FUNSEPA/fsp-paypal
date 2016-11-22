@@ -3,15 +3,22 @@
  * Copyright 2013-2016 Start Bootstrap
  * Licensed under MIT (https://github.com/BlackrockDigital/startbootstrap/blob/gh-pages/LICENSE)
  */
-@import url('https://fonts.googleapis.com/css?family=Gloria+Hallelujah');
-/* Global Styles */
+ @import url('https://fonts.googleapis.com/css?family=Gloria+Hallelujah');
+ @import url('https://fonts.googleapis.com/css?family=Comfortaa');
+ @import url('https://fonts.googleapis.com/css?family=Sintony');
+ /* Global Styles */
 
-html,
-body {
+ html,
+ body {
     width: 100%;
     height: 100%;
 }
-
+@font-face {
+  font-family: 'Bebas';
+  font-style: normal;
+  font-weight: normal;
+  src: local('Bebas'), url('../fonts/BebasNeue.otf') format('opentype');
+}
 body {
     font-family: "Source Sans Pro","Helvetica Neue",Helvetica,Arial,sans-serif;
 }
@@ -33,33 +40,38 @@ body {
 
 h3 {
     font-family: 'Gloria Hallelujah', cursive;
+    text-shadow: 2px 2px #222;
 }
 
 h1.title-text {
     font-size: 75px;
+    text-shadow: 2px 2px #222;
 }
 /* Custom Button Styles */
 
 .btn-dark {
-    border-radius: 0;
     color: #fff;
-    background-color: rgba( 22, 38, 122,1);
+    text-shadow: 1px 1px #222;
+    font-family: 'Gloria Hallelujah', cursive;
+    border-radius: 0;
+    background-color: rgba(0, 99, 187, 1);
 }
 
 .btn-dark:hover {
     background-color:  rgba(25, 109, 255, 1);
     color: #fff;
 }
-.btn-dark:focus,
+
 .btn-dark:active {
     color: #fff;
-    background-color: rgba(0,0,0,0.7);
+    background-color:  rgba(40, 150, 255, 1);
 }
 
 .btn-light {
     border-radius: 0;
     color: #333;
     background-color: rgb(255,255,255);
+    text-shadow: 1px 1px #222;
 }
 
 .btn-light:hover,
@@ -160,6 +172,11 @@ hr.small {
     margin: 5px 5px 0 0;
 }
 
+.secure-text {
+    position: relative;
+    margin: 5px 5px 0 0;
+}
+
 /* Header */
 
 .header {
@@ -177,7 +194,7 @@ hr.small {
 /* About */
 
 .about {
-    padding: 50px 0;
+    padding: 0 0;
 }
 
 /* Services */
@@ -192,8 +209,18 @@ hr.small {
     padding-bottom: 15px;
     padding-right: 15px;
     padding-left: 15px;
-    background-color: rgba( 0, 74, 203, 1);
-    color: #fff;
+    height: 100%;
+    background-color: rgba( 0,57,206,1);
+    
+    color: rgba( 35, 35, 35, 0.9);
+    border: 1px solid white;
+    border-color: rgba( 0, 0, 0, 0.1);
+    box-shadow: 1px 1px 7px #888888;
+}
+
+.service-item h3 {
+    font-size: 35px;
+    text-shadow: 0px 0px #222;
 }
 
 .donation {
@@ -214,34 +241,6 @@ hr.small {
     -moz-background-size: cover;
     background-size: cover;
     -o-background-size: cover;
-}
-
-/* Portfolio */
-
-.portfolio {
-    padding: 50px 0;
-}
-
-.portfolio-item {
-    margin-bottom: 30px;
-}
-
-.img-portfolio {
-    margin: 0 auto;
-}
-
-.img-portfolio:hover {
-    opacity: 0.8;
-}
-
-/* Call to Action */
-
-.call-to-action {
-    padding: 50px 0;
-}
-
-.call-to-action .btn {
-    margin: 10px;
 }
 
 /* Map */
@@ -275,8 +274,16 @@ footer {
 
 .black-text {
     font-family: 'Gloria Hallelujah', cursive;
-    color: #16267a;
+    color: #fff;
     padding-bottom: 15px;
+    text-shadow: 2px 2px #222;
+}
+
+.black-text-inverse {
+    font-family: 'Gloria Hallelujah', cursive;
+    color: rgba( 0, 74, 203, 1);
+    padding-bottom: 15px;
+    text-shadow: 2px 2px #222;
 }
 
 h1.black-text {
@@ -284,7 +291,7 @@ h1.black-text {
 }
 
 .form-control {
-    color: rgba( 0, 74, 203, 0.8);
+    color: rgba( 0, 0, 0, 0.8);
     font-size: 18px;
     position: relative;
     left: 0;
@@ -295,28 +302,28 @@ h1.black-text {
 }
 
 .form-control.form-white {
-    color: rgba( 0, 74, 203, 1);
+    color: rgba( 0, 0, 0, 1);
     border: 2px solid white;
-    border-color: rgba( 0, 74, 203, 1);
+    border-color: rgba( 0, 0, 0, 1);
     -webkit-transition: background-color 0.3s;
     transition: background-color 0.3s;
 }
 
 .form-control.form-white::-webkit-input-placeholder {
     /* WebKit browsers */
-    color: rgba( 0, 74, 203, 0.6);
+    color: rgba( 0, 0, 0, 0.6);
 }
 
 .form-control.form-white:-moz-placeholder {
     opacity: 1;
     /* Mozilla Firefox 4 to 18 */
-    color: rgba( 0, 74, 203, 0.6);
+    color: rgba( 0, 0, 0, 0.6);
 }
 
 .form-control.form-white::-moz-placeholder {
     opacity: 1;
     /* Mozilla Firefox 19+ */
-    color: rgba( 0, 74, 203, 0.6);
+    color: rgba( 0, 0, 0, 0.6);
 }
 
 .form-control.form-white:-ms-input-placeholder {
@@ -333,6 +340,7 @@ h1.black-text {
 }
 
 .row {
+    margin-top: 15px;
     margin-bottom: 15px;
 }
 
@@ -349,7 +357,95 @@ h1.black-text {
 
 @media (min-width: 768px) {
     .v-center {
-       display: flex;
-       align-items: center;
+        display: flex;
+        align-items: center;
     }
+    
+}
+
+#area-form {
+    background-color: rgba( 220, 220, 220, 1);
+}
+
+.modal-backdrop.in {
+    filter: alpha(opacity=50);
+    opacity: 0.95;
+}
+
+#body-row {
+    background-color: rgba( 235, 232, 232, 1);
+}
+
+#header-row {
+    background: url(../img/bg4.jpg) no-repeat center center; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+.help-block {
+    margin-bottom: 0px;
+}
+
+h2.card-type-icons {
+    margin-top: 2px;
+    margin-bottom: 0px;
+}
+
+input[type=number]::-webkit-inner-spin-button, 
+input[type=month]::-webkit-inner-spin-button, 
+input[type=month]::-webkit-outer-spin-button,
+input[type=number]::-webkit-outer-spin-button { 
+  -webkit-appearance: none; 
+  margin: 0; 
+}
+
+.navbar-default {
+    background-color: #f8f8f8;
+}
+.navbar {
+    min-height: 80px;
+    margin-bottom: 0px;
+    color: rgba( 0,57,206,1);
+}
+.h1, h1 {
+    font-size: 70px;
+}
+
+.bg-verde {
+    background-color: rgba( 185, 185, 185, 1);
+}
+
+.bg-verde:hover {
+    color: #fff;
+    text-shadow: 1px 1px #222;
+    background-color: rgba(0, 99, 187, 0.9);
+}
+.bg-verde:focus {
+    color: #fff;
+    text-shadow: 1px 1px #222;
+    background-color: rgba(0, 99, 187, 0.9);
+}
+.bg-verde:active {
+    color: #fff;
+    text-shadow: 1px 1px #222;
+    background-color: rgba(0, 99, 187, 0.9);
+}
+.service-item:active {
+    color: #fff;
+    text-shadow: 1px 1px #222;
+    background-color: rgba(0, 99, 187, 0.9);
+}
+.btn-group > .btn.active {
+    color: #fff;
+    text-shadow: 1px 1px #222;
+    background-color: rgba(0, 99, 187, 0.9);
+}
+.btn {
+    white-space: normal;
+    border-radius: 0;
+}
+.btn-group>.btn {
+    float: none;
 }
