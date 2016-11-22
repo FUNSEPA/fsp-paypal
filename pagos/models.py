@@ -1,4 +1,5 @@
 from django.db import models
+from datetime import datetime
 
 
 class CardType(models.Model):
@@ -26,6 +27,7 @@ class Donation(models.Model):
     total = models.DecimalField(max_digits=7, decimal_places=2)
     donnor = models.ForeignKey(Donnor, on_delete=models.PROTECT)
     payment_ref = models.CharField(max_length=225)
+    date = models.DateTimeField(default=datetime.now, null=True, blank=True)
 
     def __str__(self):
         return str(self.total)

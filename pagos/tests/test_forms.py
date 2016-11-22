@@ -1,13 +1,14 @@
 import pytest
 from mixer.backend.django import mixer
 from pagos.forms import *
+from pagos.models import *
 pytestmark = pytest.mark.django_db
 
 
 class TestDonationForm:
     def test_form(self):
         form = DonationForm(data={})
-        card_type = mixer.blend('pagos.CardType', alias='visa')
+        card_type = mixer.blend('pagos.CardType', alias='visa', card_type='visa')
         assert form.is_valid() is False, 'Should be invalida if no data'
 
         form = DonationForm(data={
@@ -32,6 +33,4 @@ class TestDonationForm:
             'expire_year': "2018",
             'cvv2': "874",
             'total': "2.00"})
-        print(card_type.alias)
-        print(form.errors)
         assert form.is_valid() is True, 'Should be valid'

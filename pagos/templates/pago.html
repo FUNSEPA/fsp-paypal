@@ -7,12 +7,6 @@
 	<div class="container">
 		<!-- Brand and toggle get grouped for better mobile display -->
 		<div class="navbar-header">
-			<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-				<span class="sr-only">Toggle navigation</span>
-				<span class="icon-bar"></span>
-				<span class="icon-bar"></span>
-				<span class="icon-bar"></span>
-			</button>
 			<a class="navbar-brand" href="https://funsepa.org/cms/en/home/">
 				<img style="max-width:200px; margin-top: -7px;" src="https://funsepa.org/cms/wp-content/uploads/2016/07/logo_header_1.png">
 			</a>
@@ -23,7 +17,7 @@
 	<div class="container">
 		<div class="row " id="header-row">
 			<div class="col-md-12 text-center">
-				<h1 class="black-text">#Donating Works</h1>
+				<h1 class="black-text">#JoinUs</h1>
 				<h3 class="black-text">Support Guatemalan children's education by donating to Funsepa!</h3>
 			</div>
 		</div>
@@ -31,59 +25,63 @@
 			<div class="col-md-2"></div>
 			<div class="col-md-8">
 				<div class="row v-center" id="body-row">
-					<div class="col-md-6" id="area-botones">
+					<div class="col-md-6 btn-toolbar" role="toolbar" id="area-botones" data-toggle="buttons">
 						<div class="row text-center v-center">
-							<div class="col-md-6 col-xs-6">
-								<div class="service-item">
+							<div class="col-md-6 col-xs-6 btn-group" role="group">
+								<a href="#id_total" type="button" class="btn btn-default btn-block service-item bg-verde" onclick="pick_total(20);">
 									<h4>
-										<strong>Keyboard + Mouse</strong>
+										<strong>KEYBOARD + MOUSE</strong>
 									</h4>
-									<button class="btn btn-dark" onclick="pick_total(20);">$20</button>
-								</div>
+									<h3>$20</h3>
+								</a>
 							</div>
-							<div class="col-md-6 col-xs-6">
-								<div class="service-item bg-primary">
+							<div class="col-md-6 col-xs-6 btn-group" role="group">
+								<a href="#id_total" class="btn btn-default btn-block service-item bg-verde" onclick="pick_total(125);">
 									<h4>
-										<strong>1 computer</strong>
+										<br>
+										<strong>1 COMPUTER</strong>
+										<br>
 									</h4>
-									<button class="btn btn-dark" onclick="pick_total(125);">$125</button>
-								</div>
+									<h3>$125</h3>
+								</a>
 							</div>
 						</div>
 						<div class="row text-center v-center">
-							<div class="col-md-6 col-xs-6">
-								<div class="service-item bg-primary">
+							<div class="col-md-6 col-xs-6 btn-group" role="group">
+								<a href="#id_total" class="btn btn-default btn-block service-item bg-verde" onclick="pick_total(500);">
 									<h4>
-										<strong>Server for education</strong>
+										<strong>SERVER</strong>
+										<br><br>
 									</h4>
-									<button class="btn btn-dark" onclick="pick_total(500);">$500</button>
-								</div>
+									<h3>$500</h3>
+								</a>
 							</div>
-							<div class="col-md-6 col-xs-6">
-								<div class="service-item bg-primary">
+							<div class="col-md-6 col-xs-6 btn-group" role="group">
+								<a href="#id_total" class="btn btn-default btn-block service-item bg-verde" onclick="pick_total(1800);">
 									<h4>
-										<strong>Complete training</strong>
+										<strong>COMPLETE TRAINING</strong>
 									</h4>
-									<button class="btn btn-dark" onclick="pick_total(1800);">$1,800</button>
-								</div>
+									<h3>$1,800</h3>
+								</a>
 							</div>
 						</div>
 						<div class="row text-center v-center">
-							<div class="col-md-6 col-xs-6">
-								<div class="service-item bg-primary">
+							<div class="col-md-6 col-xs-6 btn-group" role="group">
+								<a href="#id_total" class="btn btn-default btn-block service-item bg-verde" onclick="pick_total(5000);">
 									<h4>
-										<strong>Computer lab</strong>
+										<strong>COMPUTER LAB</strong>
 									</h4>
-									<button class="btn btn-dark" onclick="pick_total(5000);">$5,000</button>
-								</div>
+									<h3>$5,000</h3>
+								</a>
 							</div>
-							<div class="col-md-6 col-xs-6">
-								<div class="service-item bg-primary">
+							<div class="col-md-6 col-xs-6 btn-group" role="group">
+								<a href="#id_total" class="btn btn-default btn-block service-item bg-verde" onclick="pick_total();">
+									<h3>Another</h3>
 									<h4>
-										<strong>Another quantity</strong>
+										<strong>quantity</strong>
+										<br><br>
 									</h4>
-									<button class="btn btn-dark" onclick="pick_total();">Another</button>
-								</div>
+								</a>
 							</div>
 						</div>
 					</div>
@@ -164,8 +162,20 @@
 							</div>
 							<div class="row">
 								<div class="col-md-12 text-center">
-									<button id="btn-submit" type="submit" data-text="YEAH!" class="btn btn-dark btn-lg service-item">DONATE</button>
+									<button id="btn-submit" type="submit" data-text="YEAH!" class="btn btn-dark btn-lg">
+										DONATE
+									</button>
 								</div>
+							</div>
+							<hr>
+							<div class="row text-center">
+								<p>or</p>
+								<form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+									<input type="hidden" name="cmd" value="_s-xclick">
+									<input type="hidden" name="hosted_button_id" value="LU9GYRVY4YKZL">
+									<input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
+									<img alt="" border="0" src="https://www.paypalobjects.com/es_XC/i/scr/pixel.gif" width="1" height="1">
+								</form>
 							</div>
 						</form>
 					</div>
@@ -180,10 +190,10 @@
 		</div>
 		<div class="row">
 			<div class="col-md-12 text-center">
-			<br><br><br>
+				<br><br><br>
 				<small>
 					<span id="siteseal">
-					<script async type="text/javascript" src="https://seal.godaddy.com/getSeal?sealID=jp7Q4zwuF5U8g0yXHPQnOQ9DV7phRfSBiyiWLQLFrRNgsdV7ooU8l4mdQu1R"></script>
+						<script async type="text/javascript" src="https://seal.godaddy.com/getSeal?sealID=jp7Q4zwuF5U8g0yXHPQnOQ9DV7phRfSBiyiWLQLFrRNgsdV7ooU8l4mdQu1R"></script>
 					</span>
 					<br>
 					<em>Funsepa US is a 501(c)(3) not for profit organization with EID 46-0810539</em><br>
@@ -219,46 +229,8 @@
 {% block extra_js %}
 <script src='https://www.google.com/recaptcha/api.js?onload=onloadCallback&render=explicit'></script>
 <script src="{% static "vendor/js/jquery.creditCardValidator.js" %}"></script>
+<script src="{% static "js/app.js" %}"></script>
 <script>
-	function pick_total(total) {
-		if(total){
-			$('#id_total').val(total).focus();
-			change_button(total);
-		}
-		else{
-			$('#id_total').val('').focus();
-			change_button('');
-		}
-	}
-	function change_button(total) {
-		$('#btn-submit').html('Donate $' + total);
-	}
-	var form_valid = false;
-	$('#form-group-card_type').append('<span id="card-label"></span>');
-	$(document).ready(function () {
-		{% if david is True %}
-		$('#david-modal').modal('show');
-		{% endif %}
-		$('#id_card_type').hide();
-		$('#btn-submit').prop('disabled', true);
-		$('#formulario').on('submit', function (e) {
-			$('#btn-submit').prop('disabled', true);
-			$('#id_total').val(parseFloat($('#id_total').val()).toFixed(2));
-			if(form_valid==false){
-				e.preventDefault();
-				alert("Captcha error")
-				$('#btn-submit').prop('disabled', false);
-			}
-			if(!$('#id_card_type').val()){
-				e.preventDefault();
-				alert("Please check your card number. We couldn't find the cartype in our database.")
-				$('#btn-submit').prop('disabled', false);
-			}
-		});
-		$('#id_total').on('keyup', function () {
-			change_button($(this).val());
-		});
-	});
 	$('#id_number').validateCreditCard(function(result){
 		if(result.valid){
 			$.ajax({
@@ -277,15 +249,10 @@
 			$('#card-label').html('').hide();
 		}
 	});
-	var onloadCallback = function() {
-		grecaptcha.render('captcha-space', {
-			'sitekey' : '6LexSAkUAAAAAIYsk4MMEFL_wWJtw-TADuwMxMC1',
-			'callback': function () {
-				$('#btn-submit').prop('disabled', false);
-				form_valid = true;
-			}
-		});
-	};
+	{% if david is True %}
+	$(document).ready(function () {
+		$('#david-modal').modal('show');
+	});
+	{% endif %}
 </script>
-
 {% endblock extra_js %}
