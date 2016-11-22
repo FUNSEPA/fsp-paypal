@@ -93,8 +93,7 @@ class DonationForm(Form):
                 donnor=donnor,
                 payment_ref=payment.id)
             donation.save()
-            if 'EMAIL_FROM' in globals():
-                send_thanks_email(cleaned_data.get("first_name"), cleaned_data.get("last_name"), cleaned_data.get("mail"), cleaned_data.get("total"))
+            send_thanks_email(cleaned_data.get("first_name"), cleaned_data.get("last_name"), cleaned_data.get("mail"), cleaned_data.get("total"))
             print("Payment[%s] created successfully" % (payment.id))
         else:
             print(payment.error)

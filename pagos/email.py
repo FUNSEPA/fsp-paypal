@@ -37,7 +37,7 @@ def send_thanks_email(first_name, last_name, email, donation):
         'snap.png']
 
     for img in image_list:
-        fp = open(os.path.join(settings.BASE_DIR, 'pagos/static/images/email/' + img), 'rb')
+        fp = open(os.path.join(settings.BASE_DIR, 'pagos/static/img/email/' + img), 'rb')
         image = MIMEImage(fp.read())
         image.add_header('Content-ID', '<{}>'.format(os.path.basename(fp.name)))
         msg.attach(image)
