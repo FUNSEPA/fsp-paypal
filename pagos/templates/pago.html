@@ -183,6 +183,33 @@
 			</div>
 			<div class="col-md-2"></div>
 		</div>
+		<div class="row">
+			<div class="col-md-4"></div>
+			<div class="col-md-4">
+				<div class="row">
+					<div class="col-md-3 col-xs-3 text-center">
+						<a href="https://www.facebook.com/FunSEPA-141681649179179">
+							<img src="{% static "img/email/fb.png" %}">
+						</a>
+					</div>
+					<div class="col-md-3 col-xs-3 text-center">
+						<a href="https://www.twitter.com/funsepa">
+							<img src="{% static "img/email/tw.png" %}">
+						</a>
+					</div>
+					<div class="col-md-3 col-xs-3 text-center">
+						<a href="https://www.youtube.com/user/funsepa">
+							<img src="{% static "img/email/yt.png" %}">
+						</a>
+					</div>
+					<div class="col-md-3 col-xs-3 text-center">
+						<a href="https://instagram.com/fun_sepa">
+							<img src="{% static "img/email/ig.png" %}">
+						</a>
+					</div>
+				</div>
+			</div>
+		</div>
 		<div class="row ">
 			<div class="col-md-12 text-center">
 				<h1 class="black-text-inverse">Thank you!</h1>
@@ -190,7 +217,6 @@
 		</div>
 		<div class="row">
 			<div class="col-md-12 text-center">
-				<br><br><br>
 				<small>
 					<span id="siteseal">
 						<script async type="text/javascript" src="https://seal.godaddy.com/getSeal?sealID=jp7Q4zwuF5U8g0yXHPQnOQ9DV7phRfSBiyiWLQLFrRNgsdV7ooU8l4mdQu1R"></script>
@@ -224,6 +250,20 @@
 	</div>
 </div>
 
+{% if navidad is True and not form.non_field_errors %} 
+<div class="modal fade bs-example-modal-lg" id="navidad-modal" tabindex="-1" role="dialog" aria-labelledby="navidad-modal-label">
+	<div class="modal-dialog modal-lg" role="document">
+		<div class="modal-content">
+			<div class="modal-body">
+				<div class="embed-responsive embed-responsive-16by9" id="video">
+					<iframe width="560" height="315" src="https://www.youtube.com/embed/-fkyiOEJ7qs?autoplay=1" frameborder="0" allowfullscreen></iframe>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+{% endif %}
+
 {% endblock content %}
 
 {% block extra_js %}
@@ -252,6 +292,14 @@
 	{% if david is True and not form.non_field_errors %}
 	$(document).ready(function () {
 		$('#david-modal').modal('show');
+	});
+	{% endif %}
+	{% if navidad is True and not form.non_field_errors %}
+	$(document).ready(function () {
+		$('#navidad-modal').modal('show');
+		$('#navidad-modal').on('hidden.bs.modal', function (e) {
+			$('#video').html('');
+		});
 	});
 	{% endif %}
 </script>

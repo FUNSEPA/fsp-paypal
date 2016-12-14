@@ -14,8 +14,11 @@ class PagoView(FormView):
     def get_context_data(self, **kwargs):
         context = super(PagoView, self).get_context_data(**kwargs)
         david = self.request.GET.get('david', None)
+        navidad = self.request.GET.get('navidad', None)
         if david:
             context['david'] = True
+        if navidad:
+            context['navidad'] = True
         return context
 
     def form_valid(self, form):
