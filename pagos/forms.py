@@ -25,6 +25,21 @@ class DonationForm(Form):
         max_length=150,
         label='Email',
         widget=forms.EmailInput(attrs={'class': 'form-control form-white', 'placeholder': 'Email'}))
+    address = forms.CharField(
+        required=False,
+        widget=forms.TextInput(attrs={'class': 'form-control form-white', 'placeholder': 'Address'}))
+    city = forms.CharField(
+        required=False,
+        widget=forms.TextInput(attrs={'class': 'form-control form-white', 'placeholder': 'City'}))
+    state = forms.CharField(
+        required=False,
+        widget=forms.TextInput(attrs={'class': 'form-control form-white', 'placeholder': 'State'}))
+    zip_code = forms.CharField(
+        required=False,
+        widget=forms.TextInput(attrs={'class': 'form-control form-white', 'placeholder': 'Zip Code'}))
+    country = forms.CharField(
+        required=False,
+        widget=forms.TextInput(attrs={'class': 'form-control form-white', 'placeholder': 'Country'}))
     card_type = forms.ModelChoiceField(
         required=True,
         label='',
@@ -85,7 +100,12 @@ class DonationForm(Form):
             donnor = Donnor.objects.create(
                 first_name=cleaned_data.get("first_name"),
                 last_name=cleaned_data.get("last_name"),
-                mail=cleaned_data.get("mail"),)
+                mail=cleaned_data.get("mail"),
+                address=cleaned_data.get("address"),
+                city=cleaned_data.get("city"),
+                state=cleaned_data.get("state"),
+                zip_code=cleaned_data.get("zip_code"),
+                country=cleaned_data.get("country"),)
             donnor.save()
             donation = Donation.objects.create(
                 card_type=cleaned_data.get("card_type"),
