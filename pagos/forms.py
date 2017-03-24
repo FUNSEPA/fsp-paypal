@@ -71,6 +71,12 @@ class DonationForm(Form):
             'class': 'form-control form-white',
             'min': '1',
             'placeholder': 'CVV'}))
+    message = forms.CharField(
+        label='Send us a message!',
+        required=False,
+        widget=forms.Textarea(attrs={
+            'class': 'form-control form-white',
+            'placeholder': 'Send us a message!'}))
     total = forms.DecimalField(
         label='Donation ($)',
         max_digits=7, decimal_places=2, min_value=0,
@@ -110,6 +116,7 @@ class DonationForm(Form):
             donation = Donation.objects.create(
                 card_type=cleaned_data.get("card_type"),
                 total=cleaned_data.get("total"),
+                message=cleaned_data.get('message'),
                 donnor=donnor,
                 payment_ref=payment.id)
             donation.save()

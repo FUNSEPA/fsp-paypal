@@ -33,6 +33,7 @@ class Donation(models.Model):
     donnor = models.ForeignKey(Donnor, on_delete=models.PROTECT)
     payment_ref = models.CharField(max_length=225)
     date = models.DateTimeField(default=datetime.now, null=True, blank=True)
+    message = models.TextField(null=True, blank=True)
 
     def __str__(self):
         return str(self.total)
