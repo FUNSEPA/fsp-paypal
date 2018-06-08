@@ -121,6 +121,7 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
+# Puede ser 'sandbox' o 'live'
 PP_MODE = "sandbox"
-PP_CLIENT_ID  = "AQmfrC0Kxe2HNga5TG8GuAmlTP-oqGwoKAJjpX7j61GPi6c6y_MpwfzimlPfaHJxPVRt1A4ii8KZoilg"
-PP_CLIENT_SECRET = "ELKOMdZ640kyOHLvej2yVM5o5sSt4WaP_ECU17RJUTe6yVxiZWLD66UvXiMSBM8HoGQslgL1hgSwOzFt"
+PP_CLIENT_ID  = ""
+PP_CLIENT_SECRET = ""
