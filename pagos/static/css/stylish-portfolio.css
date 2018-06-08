@@ -1,17 +1,11 @@
-/*!
- * Start Bootstrap - Stylish Portfolio (http://startbootstrap.com/)
- * Copyright 2013-2016 Start Bootstrap
- * Licensed under MIT (https://github.com/BlackrockDigital/startbootstrap/blob/gh-pages/LICENSE)
- */
- @import url('https://fonts.googleapis.com/css?family=Gloria+Hallelujah');
- @import url('https://fonts.googleapis.com/css?family=Comfortaa');
- @import url('https://fonts.googleapis.com/css?family=Sintony');
+ @import url('https://fonts.googleapis.com/css?family=Anton|Istok+Web');
  /* Global Styles */
 
  html,
  body {
-    width: 100%;
-    height: 100%;
+     width: 100%;
+     height: 100%;
+     background-color: #f6eae2;
 }
 @font-face {
   font-family: 'Bebas';
@@ -20,7 +14,7 @@
   src: local('Bebas'), url('../fonts/BebasNeue.otf') format('opentype');
 }
 body {
-    font-family: "Source Sans Pro","Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-family: "Istok Web","Helvetica Neue",Helvetica,Arial,sans-serif;
 }
 
 .text-vertical-center {
@@ -39,8 +33,7 @@ body {
 }
 
 h3 {
-    font-family: 'Gloria Hallelujah', cursive;
-    text-shadow: 2px 2px #222;
+    font-family: 'Anton', cursive;
 }
 
 h1.title-text {
@@ -48,22 +41,24 @@ h1.title-text {
     text-shadow: 2px 2px #222;
 }
 /* Custom Button Styles */
+.btn-sq {
+
+}
 
 .btn-dark {
-    color: #fff;
-    text-shadow: 1px 1px #222;
-    font-family: 'Gloria Hallelujah', cursive;
-    border-radius: 0;
-    background-color: rgba(0, 99, 187, 1);
+    color: #f6eae2;
+    font-family: 'Anton', cursive;
+    background-color: rgb(107, 211, 194);
+    border-radius: 15px;
 }
 
 .btn-dark:hover {
     background-color:  rgba(25, 109, 255, 1);
-    color: #fff;
+    color: #f6eae2;
 }
 
 .btn-dark:active {
-    color: #fff;
+    color: #f6eae2;
     background-color:  rgba(40, 150, 255, 1);
 }
 
@@ -204,23 +199,30 @@ hr.small {
 }
 
 .service-item {
-    font-family: 'Gloria Hallelujah', cursive;
+    font-family: 'Istok Web', cursive;
     padding-top: 15px;
     padding-bottom: 15px;
     padding-right: 15px;
     padding-left: 15px;
-    height: 100%;
+    width: 150px !important;
+    height: 150px !important;
     background-color: rgba( 0,57,206,1);
+    text-align: left;
+    border-radius: 15px;
     
     color: rgba( 35, 35, 35, 0.9);
-    border: 1px solid white;
+    border: 0px;
     border-color: rgba( 0, 0, 0, 0.1);
-    box-shadow: 1px 1px 7px #888888;
+    /*box-shadow: 1px 1px 7px #888888;*/
 }
 
+.btn-default:active:hover{
+    background-color: inherit;
+}
 .service-item h3 {
     font-size: 35px;
-    text-shadow: 0px 0px #222;
+    position: absolute;
+    bottom: 0;
 }
 
 .donation {
@@ -292,19 +294,23 @@ h1.black-text {
 
 .form-control {
     color: rgba( 0, 0, 0, 0.8);
-    font-size: 18px;
+    font-size: 14px;
     position: relative;
     left: 0;
-    padding: 20px 10px;
+    padding: 25px 15px;
     border: 1px;
-    border-radius: 0;
+    border-radius: 10px;
     box-shadow: 0;
+    text-transform: uppercase;
+    background-color: #f6eae2;
+    font-weight: bold;
+    letter-spacing: 4px;
 }
 
 .form-control.form-white {
-    color: rgba( 0, 0, 0, 1);
-    border: 2px solid white;
-    border-color: rgba( 0, 0, 0, 1);
+    color: rgba( 96, 96, 93, 1);
+    /*border: 2px solid white;
+    border-color: rgba( 0, 0, 0, 1);*/
     -webkit-transition: background-color 0.3s;
     transition: background-color 0.3s;
 }
@@ -332,7 +338,7 @@ h1.black-text {
 }
 
 .form-control.form-white:focus {
-    background-color: rgba( 0, 74, 203, 0.1);
+    /*background-color: rgba( 0, 74, 203, 0.1);*/
 }
 
 .btn-lg {
@@ -364,7 +370,7 @@ h1.black-text {
 }
 
 #area-form {
-    background-color: rgba( 220, 220, 220, 1);
+    background-color: rgb(237, 214, 200);
 }
 
 .modal-backdrop.in {
@@ -373,7 +379,7 @@ h1.black-text {
 }
 
 #body-row {
-    background-color: rgba( 235, 232, 232, 1);
+    background-color: rgb(107, 211, 194);
 }
 
 #header-row {
@@ -402,7 +408,7 @@ input[type=number]::-webkit-outer-spin-button {
 }
 
 .navbar-default {
-    background-color: #f8f8f8;
+    background-color: #15314c;
 }
 .navbar {
     min-height: 80px;
@@ -413,21 +419,72 @@ input[type=number]::-webkit-outer-spin-button {
     font-size: 70px;
 }
 
-.bg-verde {
-    background-color: rgba( 185, 185, 185, 1);
+
+.bg-morado {
+    color: #fff;
+    background-color: rgb(104, 43, 141);
 }
 
-.bg-verde:hover {
+.bg-morado:hover, .bg-morado:active {
+    color: #fff;
+    background-color: rgba(156, 64, 211, 1);
+}
+
+.bg-celeste {
+    color: #fff;
+    background-color: rgb(125, 206, 241);
+}
+.bg-celeste:hover, .bg-celeste:active {
+    color: #fff;
+    background-color: rgba(12, 183, 242, 1);
+}
+
+.bg-rojo{
+    color: #fff;
+    background-color: rgb(230, 75, 85);
+}
+
+.bg-rojo:hover, .bg-rojo:active {
+    color: #fff;
+    background-color: rgba(255, 0, 0, 1);
+}
+
+.bg-gris{
+    color: #fff;
+    background-color: rgb(165, 167, 170);
+}
+
+.bg-gris:hover, .bg-gris:active {
+    color: #fff;
+    background-color: rgba(82, 83, 85, 1);
+}
+
+.bg-algo-verde{
+    color: #fff;
+    background-color: rgb(44, 174, 147);
+}
+
+.bg-algo-verde:hover, .bg-algo-verde:active {
+    color: #fff;
+    background-color: rgba(40, 197, 120, 1);
+}
+
+.bg-azul {
+    color: #fff;
+    background-color: rgb(21, 49, 76);
+}
+
+.bg-azul:hover {
     color: #fff;
     text-shadow: 1px 1px #222;
     background-color: rgba(0, 99, 187, 0.9);
 }
-.bg-verde:focus {
+.bg-azul:focus {
     color: #fff;
     text-shadow: 1px 1px #222;
     background-color: rgba(0, 99, 187, 0.9);
 }
-.bg-verde:active {
+.bg-azul:active {
     color: #fff;
     text-shadow: 1px 1px #222;
     background-color: rgba(0, 99, 187, 0.9);
@@ -444,8 +501,14 @@ input[type=number]::-webkit-outer-spin-button {
 }
 .btn {
     white-space: normal;
-    border-radius: 0;
 }
 .btn-group>.btn {
     float: none;
+}
+
+@media (min-width: 768px) {
+    .row.vertical-align {
+        display: flex;
+        align-items: center;
+    }
 }

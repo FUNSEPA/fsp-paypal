@@ -17,7 +17,7 @@ function change_button(total) {
 	$('#btn-submit').html('Donate $' + total);
 }
 
-$('#form-group-card_type').append('<span id="card-label"></span>');
+//$('#form-group-card_type').append('<span id="card-label"></span>');
 
 var onloadCallback = function() {
 	grecaptcha.render('captcha-space', {
@@ -37,9 +37,9 @@ $(document).ready(function () {
 	
 	// Para que los botones de donación funcionen como radios
 	$(".btn-group > .btn").click(function(){
-		$(this).blur();
-		$('.btn-group > .btn').removeClass("active");
-		$(this).addClass("active").siblings().removeClass("active");
+		//$(this).blur();
+		//$('.btn-group > .btn').removeClass("active");
+		//$(this).addClass("active").siblings().removeClass("active");
 	});
 	
 	$('#id_total').on('keyup', function () {
