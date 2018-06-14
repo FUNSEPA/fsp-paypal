@@ -216,6 +216,11 @@ hr.small {
     /*box-shadow: 1px 1px 7px #888888;*/
 }
 
+.service-item h4 {
+    letter-spacing: 2px;
+    font-weight: 900;
+}
+
 .btn-default:active:hover{
     background-color: inherit;
 }
