@@ -8,7 +8,7 @@
 		<!-- Brand and toggle get grouped for better mobile display -->
 		<div class="navbar-header">
 			<a class="navbar-brand" href="https://funsepa.org/cms/en/home/">
-				<img style="max-width:200px; margin-top: -7px;" src="https://funsepa.org/cms/wp-content/uploads/2016/07/logo_header_1.png">
+				<img style="max-width:200px; margin-top: -7px;" src="{% static 'img/logo.png' %}">
 			</a>
 		</div>
 	</div><!-- /.container-fluid -->
@@ -17,18 +17,14 @@
 	<div class="container">
 		<div class="row " id="header-row">
 			<div class="col-md-12 text-center">
-				<h1 class="black-text">#JoinUs</h1>
-				<h3 class="black-text">Support Guatemalan children's education by donating to Funsepa!</h3>
+                <br><br><br><br><br>
 			</div>
 		</div>
-		<div class="row">
-			<div class="col-md-2"></div>
-			<div class="col-md-8">
-				<div class="row v-center" id="body-row">
-					<div class="col-md-6 btn-toolbar" role="toolbar" id="area-botones" data-toggle="buttons">
-						<div class="row text-center v-center">
+		<div class="row vertical-align nopadding" id="body-row">
+            <div class="col-xs-12 col-md-6 btn-toolbar" role="toolbar" id="area-botones" data-toggle="buttons">
+						<div class="row pull-right">
 							<div class="col-md-6 col-xs-6 btn-group" role="group">
-								<a href="#id_total" type="button" class="btn btn-default btn-block service-item bg-verde" onclick="pick_total(20);">
+								<a href="#id_total" class="btn btn-default btn-sq service-item bg-celeste" onclick="pick_total(20);">
 									<h4>
 										<strong>KEYBOARD + MOUSE</strong>
 									</h4>
@@ -36,9 +32,8 @@
 								</a>
 							</div>
 							<div class="col-md-6 col-xs-6 btn-group" role="group">
-								<a href="#id_total" class="btn btn-default btn-block service-item bg-verde" onclick="pick_total(125);">
+								<a href="#id_total" class="btn btn-default btn-block service-item bg-morado" onclick="pick_total(125);">
 									<h4>
-										<br>
 										<strong>1 COMPUTER</strong>
 										<br>
 									</h4>
@@ -46,18 +41,17 @@
 								</a>
 							</div>
 						</div>
-						<div class="row text-center v-center">
+						<div class="row pull-right">
 							<div class="col-md-6 col-xs-6 btn-group" role="group">
-								<a href="#id_total" class="btn btn-default btn-block service-item bg-verde" onclick="pick_total(500);">
+								<a href="#id_total" class="btn btn-default btn-block service-item bg-algo-verde" onclick="pick_total(500);">
 									<h4>
 										<strong>SERVER</strong>
-										<br><br>
 									</h4>
 									<h3>$500</h3>
 								</a>
 							</div>
 							<div class="col-md-6 col-xs-6 btn-group" role="group">
-								<a href="#id_total" class="btn btn-default btn-block service-item bg-verde" onclick="pick_total(1800);">
+								<a href="#id_total" class="btn btn-default btn-block service-item bg-rojo" onclick="pick_total(1800);">
 									<h4>
 										<strong>COMPLETE TRAINING</strong>
 									</h4>
@@ -65,9 +59,9 @@
 								</a>
 							</div>
 						</div>
-						<div class="row text-center v-center">
+						<div class="row pull-right">
 							<div class="col-md-6 col-xs-6 btn-group" role="group">
-								<a href="#id_total" class="btn btn-default btn-block service-item bg-verde" onclick="pick_total(5000);">
+								<a href="#id_total" class="btn btn-default btn-block service-item bg-azul" onclick="pick_total(5000);">
 									<h4>
 										<strong>COMPUTER LAB</strong>
 									</h4>
@@ -75,17 +69,17 @@
 								</a>
 							</div>
 							<div class="col-md-6 col-xs-6 btn-group" role="group">
-								<a href="#id_total" class="btn btn-default btn-block service-item bg-verde" onclick="pick_total();">
-									<h3>Another</h3>
+								<a href="#id_total" class="btn btn-default btn-block service-item bg-gris" onclick="pick_total();">
 									<h4>
-										<strong>quantity</strong>
-										<br><br>
+										ANOTHER
 									</h4>
+                                    <h3>Quantity</h3>
 								</a>
 							</div>
 						</div>
 					</div>
-					<div class="col-md-6" id="area-form">
+
+					<div class="col-xs-12 col-md-6 nopadding" id="area-form">
 						<div class="secure-text pull-right"><i class="fa fa-lock" aria-hidden="true"></i> secure connection</div>
 						<form action="{{action}}" method="post" class="contact-form" id="formulario">
 							{% csrf_token %}
@@ -121,7 +115,7 @@
 									</div>
 								</div>
 							</div>
-							
+
 							<div class="row">
 								<div class="col-md-12">
 									<div class="form-group label-floating is-empty" id="form-group-{{field.name}}">
@@ -221,42 +215,8 @@
 							</form>
 						</div>
 					</div>
-				</div>
-			</div>
-			<div class="col-md-2"></div>
 		</div>
-		<div class="row">
-			<div class="col-md-4"></div>
-			<div class="col-md-4">
-				<div class="row">
-					<div class="col-md-3 col-xs-3 text-center">
-						<a href="https://www.facebook.com/FunSEPA-141681649179179">
-							<img src="{% static "img/email/fb.png" %}">
-						</a>
-					</div>
-					<div class="col-md-3 col-xs-3 text-center">
-						<a href="https://www.twitter.com/funsepa">
-							<img src="{% static "img/email/tw.png" %}">
-						</a>
-					</div>
-					<div class="col-md-3 col-xs-3 text-center">
-						<a href="https://www.youtube.com/user/funsepa">
-							<img src="{% static "img/email/yt.png" %}">
-						</a>
-					</div>
-					<div class="col-md-3 col-xs-3 text-center">
-						<a href="https://instagram.com/fun_sepa">
-							<img src="{% static "img/email/ig.png" %}">
-						</a>
-					</div>
-				</div>
-			</div>
-		</div>
-		<div class="row ">
-			<div class="col-md-12 text-center">
-				<h1 class="black-text-inverse">Thank you!</h1>
-			</div>
-		</div>
+
 		<div class="row">
 			<div class="col-md-12 text-center">
 				<small>

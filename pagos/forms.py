@@ -56,14 +56,14 @@ class DonationForm(Form):
             'class': 'form-control form-white',
             'min': '1',
             'max': '12',
-            'placeholder': 'Month (XX)'}))
+            'placeholder': 'MM'}))
     expire_year = forms.IntegerField(
         help_text='4 digits',
         label='Year',
         widget=forms.NumberInput(attrs={
             'class': 'form-control form-white',
             'min': '1',
-            'placeholder': 'Year (XXXX)',
+            'placeholder': 'YYYY',
             'size': 4, 'maxlength': 4}))
     cvv2 = forms.CharField(
         label='CVV',
