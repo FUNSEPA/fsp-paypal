@@ -32,48 +32,48 @@
 								</a>
 							</div>
 							<div class="col-md-6 col-xs-6 btn-group" role="group">
-								<a href="#id_total" class="btn btn-default btn-block service-item bg-morado" onclick="pick_total(125);">
+								<a href="#id_total" class="btn btn-default btn-block service-item bg-morado" onclick="pick_total(185);">
 									<h4>
 										<strong>1 COMPUTER</strong>
 										<br>
 									</h4>
-									<h3>$125</h3>
+									<h3>$185</h3>
 								</a>
 							</div>
 						</div>
 						<div class="row pull-right">
 							<div class="col-md-6 col-xs-6 btn-group" role="group">
-								<a href="#id_total" class="btn btn-default btn-block service-item bg-algo-verde" onclick="pick_total(500);">
+								<a href="#id_total" class="btn btn-default btn-block service-item bg-algo-verde" onclick="pick_total(1000);">
 									<h4>
 										<strong>SERVER</strong>
 									</h4>
-									<h3>$500</h3>
+									<h3>$1000</h3>
 								</a>
 							</div>
 							<div class="col-md-6 col-xs-6 btn-group" role="group">
-								<a href="#id_total" class="btn btn-default btn-block service-item bg-rojo" onclick="pick_total(1800);">
+								<a href="#id_total" class="btn btn-default btn-block service-item bg-rojo" onclick="pick_total(2450);">
 									<h4>
 										<strong>COMPLETE TRAINING</strong>
 									</h4>
-									<h3>$1,800</h3>
+									<h3>$2450</h3>
 								</a>
 							</div>
 						</div>
 						<div class="row pull-right">
 							<div class="col-md-6 col-xs-6 btn-group" role="group">
-								<a href="#id_total" class="btn btn-default btn-block service-item bg-azul" onclick="pick_total(5000);">
+								<a href="#id_total" class="btn btn-default btn-block service-item bg-azul" onclick="pick_total(6000);">
 									<h4>
 										<strong>COMPUTER LAB</strong>
 									</h4>
-									<h3>$5,000</h3>
+									<h3>$6000</h3>
 								</a>
 							</div>
 							<div class="col-md-6 col-xs-6 btn-group" role="group">
 								<a href="#id_total" class="btn btn-default btn-block service-item bg-gris" onclick="pick_total();">
-									<h4>
+									<h4 class="text-center">
 										ANOTHER
 									</h4>
-                                    <h3>Quantity</h3>
+                                    <h3>QUANTITY</h3>
 								</a>
 							</div>
 						</div>
@@ -89,14 +89,14 @@
 							</div>
 							{% endif %}
 							{{form.card_type}}
-							<div class="row">
+							<div class="row row-form">
 								<div class="col-md-12">
 									<div class="form-group label-floating is-empty" id="form-group-{{field.name}}">
 										{{ form.total }}
 									</div>
 								</div>
 							</div>
-							<div class="row">
+							<div class="row row-form">
 								<div class="col-md-6">
 									<div class="form-group label-floating is-empty" id="form-group-{{field.name}}">
 										{{ form.first_name }}
@@ -108,7 +108,7 @@
 									</div>
 								</div>
 							</div>
-							<div class="row">
+							<div class="row row-form">
 								<div class="col-md-12">
 									<div class="form-group label-floating is-empty" id="form-group-{{field.name}}">
 										{{ form.mail }}
@@ -116,21 +116,21 @@
 								</div>
 							</div>
 
-							<div class="row">
+							<div class="row row-form">
 								<div class="col-md-12">
 									<div class="form-group label-floating is-empty" id="form-group-{{field.name}}">
 										{{ form.address }}
 									</div>
 								</div>
 							</div>
-							<div class="row">
+							<div class="row row-form">
 								<div class="col-md-12">
 									<div class="form-group label-floating is-empty" id="form-group-{{field.name}}">
 										{{ form.city }}
 									</div>
 								</div>
 							</div>
-							<div class="row">
+							<div class="row row-form">
 								<div class="col-md-6">
 									<div class="form-group label-floating is-empty" id="form-group-{{field.name}}">
 										{{ form.state }}
@@ -142,7 +142,7 @@
 									</div>
 								</div>
 							</div>
-							<div class="row">
+							<div class="row row-form">
 								<div class="col-md-12">
 									<div class="form-group label-floating is-empty" id="form-group-{{field.name}}">
 										{{ form.country }}
@@ -150,7 +150,7 @@
 								</div>
 							</div>
 
-							<div class="row">
+							<div class="row row-form">
 								<div class="col-md-12 col-xs-12">
 									<div class="form-group label-floating is-empty has-feedback text-center" id="form-group-number">
 										{{ form.number }}
@@ -167,7 +167,7 @@
 									</div>
 								</div>
 							</div>
-							<div class="row">
+							<div class="row row-form">
 								<div class="col-md-4 col-xs-4">
 									<div class="form-group label-floating is-empty" id="form-group-{{field.name}}">
 										{{ form.expire_month }}
@@ -184,19 +184,19 @@
 									</div>
 								</div>
 							</div>
-							<div class="row">
+							<div class="row row-form">
 								<div class="col-md-12">
 									<div class="form-group label-floating is-empty" id="form-group-{{field.name}}">
 										{{ form.message }}
 									</div>
 								</div>
 							</div>
-							<div class="row">
-								<div class="col-md-12 pull-right">
+							<div class="row row-form">
+								<div class="col-md-12 text-center">
 									<div id="captcha-space"></div>
 								</div>
 							</div>
-							<div class="row">
+							<div class="row row-form">
 								<div class="col-md-12 text-center">
 									<button id="btn-submit" type="submit" data-text="YEAH!" class="btn btn-dark btn-lg">
 										DONATE
